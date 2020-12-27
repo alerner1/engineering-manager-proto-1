@@ -1,10 +1,11 @@
 import React from 'react';
 import Row from 'react-bootstrap/Row';
 import DisplayDropdown from '../Components/DisplayDropdown';
+import {v4 as uuidv4} from 'uuid';
 
 const DropdownsContainer = () => {
   const mapDropdowns = () => {
-    return dropdownsList.map((dropdown, index) => <DisplayDropdown info={dropdown} key={index} />);
+    return dropdownsList.map((dropdown) => <DisplayDropdown key={uuidv4()} info={dropdown}  />);
   }
 
   return(

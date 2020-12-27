@@ -1,9 +1,13 @@
 body {
   background-color: darkslategray;
-  color: white;
+  color: white !important;
 }
 
 .form-control {
   background-color: gray !important;
+  color: white !important;
+}
+
+table {
   color: white !important;
 }

@@ -1,13 +1,46 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
+import { v4 as uuidv4 } from 'uuid';
 
 const TableScreen1 = ({ data }) => {
 
-  const mapPrograms = () => {
-    return data.map()
+  const programsList = [];
+  const mapRows = () => {
+    return data.map(row => {
+      let flag = false;
+      if (!programsList.includes(row["Program"])) {
+        programsList.push(row["Program"]);
+        flag = true;
+      }
+
+      return <tr key={uuidv4()}>
+        
+          {flag ? <td>{row["Program"]}</td> : <td style={{border: 'none'}}></td>}
+        
+        <td>
+          {row["System"]}
+        </td>
+        <td>
+          {row["% Design Errors"]}
+        </td>
+        <td>
+          {row["Iterations per design"]}
+        </td>
+        <td>
+          {row["% Rushed design"]}
+        </td>
+        <td>
+          {row["Digital design"]}
+        </td>
+        <td>
+          {row["SME Involvement"]}
+        </td>
+      </tr>
+    })
+
   }
 
-  return(
+  return (
     <Table>
       <thead>
         <tr>
@@ -38,22 +71,7 @@ const TableScreen1 = ({ data }) => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>
-            
-          </td>
-          <td>
-
-          </td>
-        </tr>
-        <tr>
-          <td>
-
-          </td>
-          <td>
-
-          </td>
-        </tr>
+        {mapRows()}
       </tbody>
     </Table>
   );
