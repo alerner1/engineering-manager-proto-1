@@ -4,7 +4,7 @@ import DisplayDropdown from '../Components/DisplayDropdown';
 
 const DropdownsContainer = () => {
   const mapDropdowns = () => {
-    return sampleDropdowns.map((dropdown, index) => <DisplayDropdown info={dropdown} key={index} />);
+    return dropdownsList.map((dropdown, index) => <DisplayDropdown info={dropdown} key={index} />);
   }
 
   return(
@@ -16,21 +16,38 @@ const DropdownsContainer = () => {
 
 export default DropdownsContainer;
 
-const sampleDropdowns = [
+const dropdownsList = [
   {
-    title: 'Choose Metric:',
-    options: ['1', '2']
+    title: "Display subsystem?", 
+    options: [
+      "(All)",
+      "Intake",
+      "Exhaust",
+      "Fuel",
+      "Valve",
+      "Transmission",
+      "Differential",
+      "Braking",
+      "Software"
+    ]
   },
   {
-    title: 'Display Subsystem?',
-    options: ['1', '2']
+    title: "Select KPIs to display",
+    options: [
+      "(All)",
+      "Iterations per design review",
+      "% Rushed design",
+      "Digital design",
+      "SME Involvement"
+    ]
   },
   {
-    title: 'Display Warning Signal',
-    options: ['1', '2']
-  },
-  {
-    title: 'Filter on business unit',
-    options: ['1', '2']
+    title: "Filter on business unit",
+    options: [
+      "(All)",
+      "Commercial",
+      "Government",
+      "Bespoke"
+    ]
   }
 ];

@@ -1,8 +1,9 @@
 import DropdownsContainer from './Containers/DropdownsContainer';
+import { data } from './data';
 
 function App() {
   return (
-    <DropdownsContainer />
+    <DropdownsContainer data={data} />
   );
 }
 
