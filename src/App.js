@@ -1,15 +1,23 @@
 import DropdownsContainer from './Containers/DropdownsContainer';
 import TableContainer from './Containers/TableContainer';
 import { data } from './data';
+import React, {useState} from 'react';
 
-function App() {
+const App = () => {
+  
+  const [percentageMetric, setPercentageMetric] = useState("% Design Errors");
+
+  const onPercentageMetricChange = (choice) => {
+    setPercentageMetric(choice)
+  };
+
   return (
     <>
       <div className="p-3">
-        <DropdownsContainer />
+        <DropdownsContainer percentageMetric={percentageMetric} onPercentageMetricChange={onPercentageMetricChange} />
       </div>
       <div className="p-3">
-        <TableContainer data={data} />
+        <TableContainer data={data} percentageMetric={percentageMetric} />
       </div>
     </>
   );

@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import DisplayDropdown from '../Components/DisplayDropdown';
 import {v4 as uuidv4} from 'uuid';
 
-const DropdownsContainer = () => {
+const DropdownsContainer = ({percentageMetric, onPercentageMetricChange}) => {
   const mapDropdowns = () => {
     return dropdownsList.map((dropdown) => <DisplayDropdown key={uuidv4()} info={dropdown}  />);
   }
@@ -14,11 +14,11 @@ const DropdownsContainer = () => {
     <Row>
       {mapDropdowns()}
       <Col>
-        <Form>
+        <Form onChange={event => onPercentageMetricChange(event.target.value)}>
           <div key="default-radio" className="mb-3">
-            <Form.Check type="radio" id="schedule-delays" label="Schedule delays" />
-            <Form.Check type="radio" checked id="design-errors" label="Design errors" />
-            <Form.Check type="radio" id="cost-overruns" label="Cost overrruns" />
+            <Form.Check type="radio" checked={percentageMetric === "% Schedule delays"} id="schedule-delays" label="% Schedule delays" value="% Schedule delays" />
+            <Form.Check type="radio" checked={percentageMetric === "% Design Errors"} id="design-errors" label="% Design errors" value="% Design Errors" />
+            <Form.Check type="radio" checked={percentageMetric === "% Cost overrun"} id="cost-overrun" label="% Cost overrrun" value="% Cost overrun" />
           </div>
         </Form>
       </Col>
