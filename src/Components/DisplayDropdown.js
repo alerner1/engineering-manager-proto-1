@@ -2,6 +2,7 @@ import React from 'react';
 import { Form } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
 import {v4 as uuidv4} from 'uuid';
+import { VictoryChart, VictoryAxis, VictoryBar } from 'victory';
 
 const DisplayDropdown = ({ info }) => {
   const mapOptions = () => {
@@ -9,7 +10,7 @@ const DisplayDropdown = ({ info }) => {
   }
 
   return(
-    <Col xs={2}>
+    <Col xs={3}>
       <Form.Label>{info.title}</Form.Label>
       <Form.Control size="sm" as="select">
         {mapOptions()}
