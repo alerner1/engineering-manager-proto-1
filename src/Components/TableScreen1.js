@@ -16,7 +16,7 @@ const TableScreen1 = ({ data, percentageMetric }) => {
   const programsList = [];
   
   const mapRows = () => {
-    return data.map(row => {
+    return data.map((row, index) => {
       let flag = false;
       if (!programsList.includes(row["Program"])) {
         programsList.push(row["Program"]);
@@ -33,7 +33,7 @@ const TableScreen1 = ({ data, percentageMetric }) => {
         <td className="with-chart">
           {createBar(row[percentageMetric])}
         </td>
-        <td></td>
+        <td className={kpiDisplay ? "toggle-display" : "toggle-display in"} style={{border: 'none'}}></td>
         <td className={kpiDisplay ? "toggle-display in" : "toggle-display"}>
           {row["Iterations per design"]}
         </td>
@@ -63,7 +63,7 @@ const TableScreen1 = ({ data, percentageMetric }) => {
 
     const formattedData = [{ x: 0, y: 100 }]
 
-    return <VictoryChart maxDomain={{y: 100}} horizontal height={10} width={100} padding={5}>
+    return <VictoryChart maxDomain={{y: 100}} horizontal height={10} width={100} padding={1}>
     <VictoryBar 
       style={{ data: {fill: color, width: 10 }, labels: { fill: "transparent" }}}
       data={formattedData} 
@@ -153,7 +153,7 @@ const TableScreen1 = ({ data, percentageMetric }) => {
           <th style={{width: "35%"}}>
             {percentageMetric}
           </th>
-          <th>
+          <th style={{width: "15%"}} className={kpiDisplay ? "toggle-display" : "toggle-display in"}>
             <Button className={kpiDisplay ? "toggle-display" : "toggle-display in"} onClick={toggleKPIs}>Toggle KPIs</Button>
           </th>
           <th className={kpiDisplay ? "toggle-display in" : "toggle-display"}>
