@@ -1,13 +1,17 @@
 
 import Table from 'react-bootstrap/Table';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import ProgressBar from 'react-bootstrap/ProgressBar';
+import Button from 'react-bootstrap/Button';
 import { v4 as uuidv4 } from 'uuid';
 import { VictoryChart, VictoryAxis, VictoryBar, VictoryLabel, VictoryStack } from 'victory';
-import React, {useEffect} from 'react';
+import React, { useState } from 'react';
 
 const TableScreen1 = ({ data, percentageMetric }) => {
+
+  const [kpiDisplay, setKpiDisplay] = useState(false)
+
+  const toggleKPIs = () => {
+    setKpiDisplay(!kpiDisplay)
+  }
 
   const programsList = [];
   
@@ -29,16 +33,17 @@ const TableScreen1 = ({ data, percentageMetric }) => {
         <td className="with-chart">
           {createBar(row[percentageMetric])}
         </td>
-        <td>
+        <td></td>
+        <td className={kpiDisplay ? "toggle-display in" : "toggle-display"}>
           {row["Iterations per design"]}
         </td>
-        <td>
+        <td className={kpiDisplay ? "toggle-display in" : "toggle-display"}>
           {row["% Rushed design"]}
         </td>
-        <td>
+        <td className={kpiDisplay ? "toggle-display in" : "toggle-display"}>
           {row["Digital design"]}
         </td>
-        <td>
+        <td className={kpiDisplay ? "toggle-display in" : "toggle-display"}>
           {row["SME Involvement"]}
         </td>
         <td>
@@ -51,7 +56,7 @@ const TableScreen1 = ({ data, percentageMetric }) => {
   const forecastRisk = (dataPoint) => {
     let color = "green";
     if (dataPoint === 2) {
-      color = "yellow";
+      color = "#E0BA3E";
     } else if (dataPoint === 3) {
       color = "red";
     }
@@ -149,15 +154,18 @@ const TableScreen1 = ({ data, percentageMetric }) => {
             {percentageMetric}
           </th>
           <th>
+            <Button className={kpiDisplay ? "toggle-display" : "toggle-display in"} onClick={toggleKPIs}>Toggle KPIs</Button>
+          </th>
+          <th className={kpiDisplay ? "toggle-display in" : "toggle-display"}>
             Iterations per design
           </th>
-          <th>
+          <th className={kpiDisplay ? "toggle-display in" : "toggle-display"}>
             Rushed design
           </th>
-          <th>
+          <th className={kpiDisplay ? "toggle-display in" : "toggle-display"}>
             Design digitization
           </th>
-          <th>
+          <th className={kpiDisplay ? "toggle-display in" : "toggle-display"}>
             SME involvement
           </th>
           <th style={{width: "7%"}}>

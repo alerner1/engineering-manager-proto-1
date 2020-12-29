@@ -19,3 +19,11 @@ table {
 svg {
   overflow: visible !important;
 }
+
+.toggle-display {
+  display: none;
+}
+
+.toggle-display.in {
+  display: table-cell;
+}
