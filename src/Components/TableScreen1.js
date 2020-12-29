@@ -100,8 +100,8 @@ const TableScreen1 = ({ data, percentageMetric }) => {
             >
 
               <VictoryBar 
-                cornerRadius={{ bottomLeft: 3, bottomRight: 3 }}
-                style={{ data: { fill: color, stroke: "black", strokeWidth: 0.5 }}}
+                cornerRadius={{ bottomLeft: 2, bottomRight: 2 }}
+                style={{ data: { fill: color, stroke: "gray", strokeWidth: 0.5 }}}
                 data={formattedData} 
                 labels={dataPoint} 
                 labelComponent={
@@ -109,8 +109,8 @@ const TableScreen1 = ({ data, percentageMetric }) => {
                 }
                 />
               <VictoryBar
-                cornerRadius={3}
-                style={{ data: { fill: "darkslategray", stroke: "black", strokeWidth: 0.5 } }}
+                cornerRadius={2}
+                style={{ data: { fill: "darkslategray", stroke: "gray", strokeWidth: 0.5 } }}
                 data={[{ x: 0, y: 100 - dataPoint }]}
               />
             </VictoryStack>
