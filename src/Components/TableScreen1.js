@@ -13,22 +13,22 @@ const TableScreen1 = ({ data, percentageMetric }) => {
     setKpiDisplay(!kpiDisplay)
   }
 
-  const programsList = [];
+  const divisionsList = [];
   
   const mapRows = () => {
     return data.map((row, index) => {
       let flag = false;
-      if (!programsList.includes(row["Program"])) {
-        programsList.push(row["Program"]);
+      if (!divisionsList.includes(row["Division"])) {
+        divisionsList.push(row["Division"]);
         flag = true;
       }
 
       return <tr key={uuidv4()}>
         
-        {flag ? <td>{row["Program"]}</td> : <td style={{border: 'none'}}></td>}
+        {flag ? <td>{row["Division"]}</td> : <td style={{border: 'none'}}></td>}
         
         <td>
-          {row["System"]}
+          {row["Subdivision"]}
         </td>
         <td className="with-chart">
           {createBar(row[percentageMetric])}
@@ -145,10 +145,10 @@ const TableScreen1 = ({ data, percentageMetric }) => {
       <thead>
         <tr>
           <th>
-            Program
+            Division
           </th>
           <th>
-            Subsystem
+            Subdivision
           </th>
           <th style={{width: "35%"}}>
             {percentageMetric}
