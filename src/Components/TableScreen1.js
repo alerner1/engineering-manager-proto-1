@@ -102,7 +102,7 @@ const TableScreen1 = ({ data, percentageMetric }) => {
 
       <VictoryChart maxDomain={{ y: 100 }} horizontal height={20} width={100} padding={{ top: 3, bottom: 17 }}>
         <VictoryStack
-          style={{ labels: { fill: "white", fontSize: 5 } }}
+          style={{ labels: { fill: "white", fontSize: 4 } }}
         >
           <VictoryBar
             cornerRadius={{ bottomLeft: 2, bottomRight: 2 }}
