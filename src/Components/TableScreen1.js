@@ -58,9 +58,9 @@ const TableScreen1 = ({ data, percentageMetric }) => {
 
     const formattedData = [{ x: 0, y: 100 }]
 
-    return <VictoryChart maxDomain={{y: 100}} horizontal height={20} width={100} padding={5}>
+    return <VictoryChart maxDomain={{y: 100}} horizontal height={10} width={100} padding={5}>
     <VictoryBar 
-      style={{ data: {fill: color, width: 25 }, labels: { fill: "transparent" }}}
+      style={{ data: {fill: color, width: 10 }, labels: { fill: "transparent" }}}
       data={formattedData} 
       labels={({datum}) => (`${datum.y}`)} 
     />
@@ -94,14 +94,14 @@ const TableScreen1 = ({ data, percentageMetric }) => {
 
     return (
       
-          <VictoryChart maxDomain={{y: 100}} horizontal height={15} width={100} padding={1}>
+          <VictoryChart maxDomain={{y: 100}} horizontal height={5} width={100} padding={1}>
             <VictoryStack
-              style={{ data: { width: 25 }, labels: { fill: "white", fontSize: 9 }}}
+              style={{ data: { width: 5 }, labels: { fill: "white", fontSize: 5 }}}
             >
 
               <VictoryBar 
-                cornerRadius={{ bottomLeft: 5, bottomRight: 5 }}
-                style={{ data: { fill: color, stroke: "black", strokeWidth: 1 }}}
+                cornerRadius={{ bottomLeft: 3, bottomRight: 3 }}
+                style={{ data: { fill: color, stroke: "black", strokeWidth: 0.5 }}}
                 data={formattedData} 
                 labels={dataPoint} 
                 labelComponent={
@@ -109,8 +109,8 @@ const TableScreen1 = ({ data, percentageMetric }) => {
                 }
                 />
               <VictoryBar
-                cornerRadius={5}
-                style={{ data: { fill: "darkslategray", stroke: "black", strokeWidth: 1 } }}
+                cornerRadius={3}
+                style={{ data: { fill: "darkslategray", stroke: "black", strokeWidth: 0.5 } }}
                 data={[{ x: 0, y: 100 - dataPoint }]}
               />
             </VictoryStack>
@@ -145,7 +145,7 @@ const TableScreen1 = ({ data, percentageMetric }) => {
           <th>
             Subsystem
           </th>
-          <th>
+          <th style={{width: "35%"}}>
             {percentageMetric}
           </th>
           <th>
@@ -160,7 +160,7 @@ const TableScreen1 = ({ data, percentageMetric }) => {
           <th>
             SME involvement
           </th>
-          <th>
+          <th style={{width: "7%"}}>
             Forecasted risk
           </th>
         </tr>
