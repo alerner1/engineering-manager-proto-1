@@ -12,7 +12,7 @@ export const data = [
     "% Rushed design": 31,
     "Digital design": 81,
     "SME Involvement": 34,
-    "Forecasted Risk": 1
+    "Forecasted Risk": 3
   },
   {
     "Business Unit": "Commercial",
@@ -27,7 +27,7 @@ export const data = [
     "% Rushed design": 24,
     "Digital design": 41,
     "SME Involvement": 23,
-    "Forecasted Risk": 3
+    "Forecasted Risk": 2
   },
   {
     "Business Unit": "Commercial",
@@ -42,7 +42,7 @@ export const data = [
     "% Rushed design": 34,
     "Digital design": 97,
     "SME Involvement": 30,
-    "Forecasted Risk": 2
+    "Forecasted Risk": 3
   },
   {
     "Business Unit": "Commercial",
@@ -72,7 +72,7 @@ export const data = [
     "% Rushed design": 3,
     "Digital design": 1,
     "SME Involvement": 32,
-    "Forecasted Risk": 1
+    "Forecasted Risk": 2
   },
   {
     "Business Unit": "Commercial",
@@ -87,7 +87,7 @@ export const data = [
     "% Rushed design": 81,
     "Digital design": 93,
     "SME Involvement": 27,
-    "Forecasted Risk": 3
+    "Forecasted Risk": 1
   },
   {
     "Business Unit": "Commercial",
