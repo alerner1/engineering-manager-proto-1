@@ -117,7 +117,7 @@ const TableScreen1 = ({ data, percentageMetric }) => {
             <VictoryAxis
               style={{
                 axis: { stroke: "transparent" },
-                ticks: { stroke: "black" },
+                ticks: { stroke: "transparent" },
                 tickLabels: { fill: "transparent" }
               }}
               tickValues={[0]}
