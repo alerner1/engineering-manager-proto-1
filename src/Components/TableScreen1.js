@@ -7,7 +7,8 @@ import React, { useState } from 'react';
 
 const TableScreen1 = ({ data, percentageMetric }) => {
 
-  const [kpiDisplay, setKpiDisplay] = useState(false)
+  const [kpiDisplay, setKpiDisplay] = useState(false);
+  const [subdivisionDisplay, setSubdivisionDisplay] = useState(false);
 
   const toggleKPIs = () => {
     setKpiDisplay(!kpiDisplay)

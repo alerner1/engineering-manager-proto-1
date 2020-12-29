@@ -30,20 +30,6 @@ export default DropdownsContainer;
 
 const dropdownsList = [
   {
-    title: "Display subsystem?", 
-    options: [
-      "(All)",
-      "Intake",
-      "Exhaust",
-      "Fuel",
-      "Valve",
-      "Transmission",
-      "Differential",
-      "Braking",
-      "Software"
-    ]
-  },
-  {
     title: "Select KPIs to display",
     options: [
       "(All)",
