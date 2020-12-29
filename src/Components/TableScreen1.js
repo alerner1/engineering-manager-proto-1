@@ -15,7 +15,7 @@ const TableScreen1 = ({ data, percentageMetric }) => {
   }
 
   const divisionsList = [];
-  
+
   const mapRows = () => {
     return data.map((row, index) => {
       let flag = false;
@@ -25,16 +25,16 @@ const TableScreen1 = ({ data, percentageMetric }) => {
       }
 
       return <tr key={uuidv4()}>
-        
-        {flag ? <td>{row["Division"]}</td> : <td style={{border: 'none'}}></td>}
-        
+
+        {flag ? <td>{row["Division"]}</td> : <td style={{ border: 'none' }}></td>}
+
         <td>
           {row["Subdivision"]}
         </td>
-        <td className="with-chart">
+        <td>
           {createBar(row[percentageMetric])}
         </td>
-        <td className={kpiDisplay ? "toggle-display" : "toggle-display in"} style={{border: 'none'}}></td>
+        <td className={kpiDisplay ? "toggle-display" : "toggle-display in"} style={{ border: 'none' }}></td>
         <td className={kpiDisplay ? "toggle-display in" : "toggle-display"}>
           {row["Iterations per design"]}
         </td>
@@ -64,33 +64,33 @@ const TableScreen1 = ({ data, percentageMetric }) => {
 
     const formattedData = [{ x: 0, y: 100 }]
 
-    return <VictoryChart maxDomain={{y: 100}} horizontal height={10} width={100} padding={1}>
-    <VictoryBar 
-      style={{ data: {fill: color, width: 10 }, labels: { fill: "transparent" }}}
-      data={formattedData} 
-      labels={({datum}) => (`${datum.y}`)} 
-    />
-    <VictoryAxis
-      style={{
-        axis: { stroke: "transparent" },
-        ticks: { stroke: "transparent" },
-        tickLabels: { fill: "transparent" }
-      }}
-    />
-    <VictoryAxis
-      dependentAxis
-      style={{
-        axis: {stroke: "transparent" },
-        tick: { stroke: "transparent" },
-        tickLabels: { fill: "transparent" }
-      }}
-    />
-  </VictoryChart>
+    return <VictoryChart maxDomain={{ y: 100 }} horizontal height={20} width={100} padding={{ top: 10, bottom: 10 }}>
+      <VictoryBar
+        style={{ data: { fill: color, width: 20 }, labels: { fill: "transparent" } }}
+        data={formattedData}
+        labels={({ datum }) => (`${datum.y}`)}
+      />
+      <VictoryAxis
+        style={{
+          axis: { stroke: "transparent" },
+          ticks: { stroke: "transparent" },
+          tickLabels: { fill: "transparent" }
+        }}
+      />
+      <VictoryAxis
+        dependentAxis
+        style={{
+          axis: { stroke: "transparent" },
+          tick: { stroke: "transparent" },
+          tickLabels: { fill: "transparent" }
+        }}
+      />
+    </VictoryChart>
   }
 
   const createBar = (dataPoint) => {
     const formattedData = [{ x: 0, y: dataPoint }];
-    
+
     let color = "green";
     if (dataPoint > 33 && dataPoint < 67) {
       color = "#E0BA3E";
@@ -99,45 +99,44 @@ const TableScreen1 = ({ data, percentageMetric }) => {
     }
 
     return (
-      
-          <VictoryChart maxDomain={{y: 100}} horizontal height={5} width={100} padding={1}>
-            <VictoryStack
-              style={{ data: { width: 5 }, labels: { fill: "white", fontSize: 5 }}}
-            >
 
-              <VictoryBar 
-                cornerRadius={{ bottomLeft: 2, bottomRight: 2 }}
-                style={{ data: { fill: color, stroke: "gray", strokeWidth: 0.5 }}}
-                data={formattedData} 
-                labels={dataPoint} 
-                labelComponent={
-                  <VictoryLabel x={dataPoint} dx={-dataPoint * 0.01} textAnchor="middle"  verticalAnchor="middle" />
-                }
-                />
-              <VictoryBar
-                cornerRadius={2}
-                style={{ data: { fill: "darkslategray", stroke: "gray", strokeWidth: 0.5 } }}
-                data={[{ x: 0, y: 100 - dataPoint }]}
-              />
-            </VictoryStack>
-            <VictoryAxis
-              style={{
-                axis: { stroke: "transparent" },
-                ticks: { stroke: "transparent" },
-                tickLabels: { fill: "transparent" }
-              }}
-              tickValues={[0]}
-              tickCount={1}
-              />
-            <VictoryAxis
-              dependentAxis
-              style={{
-                axis: {stroke: "transparent" },
-                tick: { stroke: "transparent" },
-                tickLabels: { fill: "transparent" }
-              }}
-              />
-          </VictoryChart>
+      <VictoryChart maxDomain={{ y: 100 }} horizontal height={20} width={100} padding={{ top: 3, bottom: 17 }}>
+        <VictoryStack
+          style={{ labels: { fill: "white", fontSize: 5 } }}
+        >
+          <VictoryBar
+            cornerRadius={{ bottomLeft: 2, bottomRight: 2 }}
+            style={{ data: { fill: color, width: 4, stroke: "gray", strokeWidth: 0.5 } }}
+            data={formattedData}
+            labels={() => (`${dataPoint}%`)}
+            labelComponent={
+              <VictoryLabel x={dataPoint} dx={dataPoint * 0.01} textAnchor="middle" verticalAnchor="middle" />
+            }
+          />
+          <VictoryBar
+            cornerRadius={2}
+            style={{ data: { fill: "darkslategray", width: 4, stroke: "gray", strokeWidth: 0.5 } }}
+            data={[{ x: 0, y: 100 - dataPoint }]}
+          />
+        </VictoryStack>
+        <VictoryAxis
+          style={{
+            axis: { stroke: "transparent" },
+            ticks: { stroke: "transparent" },
+            tickLabels: { fill: "transparent" }
+          }}
+          tickValues={[0]}
+          tickCount={1}
+        />
+        <VictoryAxis
+          dependentAxis
+          style={{
+            axis: { stroke: "transparent" },
+            tick: { stroke: "transparent" },
+            tickLabels: { fill: "transparent" }
+          }}
+        />
+      </VictoryChart>
     );
   }
 
@@ -145,16 +144,16 @@ const TableScreen1 = ({ data, percentageMetric }) => {
     <Table>
       <thead>
         <tr>
-          <th>
+          <th style={{ width: '12%' }}>
             Division
           </th>
           <th>
             Subdivision
           </th>
-          <th style={{width: "35%"}}>
+          <th style={{ width: "35%" }}>
             {percentageMetric}
           </th>
-          <th style={{width: "15%"}} className={kpiDisplay ? "toggle-display" : "toggle-display in"}>
+          <th style={{ width: "15%" }} className={kpiDisplay ? "toggle-display" : "toggle-display in"}>
             <Button className={kpiDisplay ? "toggle-display" : "toggle-display in"} onClick={toggleKPIs}>Toggle KPIs</Button>
           </th>
           <th className={kpiDisplay ? "toggle-display in" : "toggle-display"}>
@@ -169,7 +168,7 @@ const TableScreen1 = ({ data, percentageMetric }) => {
           <th className={kpiDisplay ? "toggle-display in" : "toggle-display"}>
             SME involvement
           </th>
-          <th style={{width: "7%"}}>
+          <th style={{ width: "7%" }}>
             Forecasted risk
           </th>
         </tr>
