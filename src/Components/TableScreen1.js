@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { v4 as uuidv4 } from 'uuid';
 import { VictoryChart, VictoryAxis, VictoryBar, VictoryLabel, VictoryStack } from 'victory';
 import React, { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const TableScreen1 = ({ data, percentageMetric }) => {
 
@@ -18,14 +19,14 @@ const TableScreen1 = ({ data, percentageMetric }) => {
     setSubdivisionDisplay(!subdivisionDisplay);
   }
 
+  // could probably do this with hooks bc we need the list for all situations
+  // might also be more effective to take averages as soon as loaded so you can 
+  // toggle faster
+  // honestly this whole thing is very inefficient -- we're iterating over the array
+  // way too many times
+  // luckily it's a small array
+  // but find a more efficient way to do it in the long run
   const mapDivisionRows = () => {
-    // could probably do this with hooks bc we need the list for all situations
-    // might also be more effective to take averages as soon as loaded so you can 
-    // toggle faster
-    // honestly this whole thing is very inefficient -- we're iterating over the array
-    // way too many times
-    // luckily it's a small array
-    // but find a more efficient way to do it in the long run
     const divisionsList = [];
     const divisionRows = [];
     for (let row of data) {
@@ -102,6 +103,7 @@ const TableScreen1 = ({ data, percentageMetric }) => {
         <td className={kpiDisplay ? "toggle-display in" : "toggle-display"}>
           {row["SME Involvement"]}
         </td>
+        <td className={kpiDisplay ? "toggle-display in" : "toggle-display"} style={{ border: 'none' }}></td>
         <td>
           {forecastRisk(row["Forecasted Risk"])}
         </td>
@@ -119,7 +121,7 @@ const TableScreen1 = ({ data, percentageMetric }) => {
 
     const formattedData = [{ x: 0, y: 100 }]
 
-    return <VictoryChart maxDomain={{ y: 100 }} horizontal height={20} width={100} padding={{ top: 10, bottom: 10 }}>
+    return <VictoryChart maxDomain={{ y: 100 }} horizontal height={10} width={100} padding={{ top: 10, bottom: 10 }}>
       <VictoryBar
         style={{ data: { fill: color, width: 20 }, labels: { fill: "transparent" } }}
         data={formattedData}
@@ -155,7 +157,7 @@ const TableScreen1 = ({ data, percentageMetric }) => {
 
     return (
 
-      <VictoryChart maxDomain={{ y: 100 }} horizontal height={20} width={100} padding={{ top: 3, bottom: 17 }}>
+      <VictoryChart maxDomain={{ y: 100 }} horizontal height={10} width={100} padding={{ top: 2, bottom: 8 }}>
         <VictoryStack
           style={{ labels: { fill: "white", fontSize: 4 } }}
         >
@@ -197,10 +199,12 @@ const TableScreen1 = ({ data, percentageMetric }) => {
 
   return (
     <Table>
+      {/* this is also a mess, try to fix */}
       <thead>
         <tr>
           <th style={{ width: '12%' }}>
-            Division
+            Division &nbsp;
+            {subdivisionDisplay ? <FontAwesomeIcon className="hover-hand" onClick={() => toggleSubdivisions()} icon="minus-circle" /> : <FontAwesomeIcon className="hover-hand" onClick={() => toggleSubdivisions()} icon="plus-circle" />}
           </th>
           <th className={subdivisionDisplay ? "toggle-display in" : "toggle-display"}>
             Subdivision
@@ -209,7 +213,7 @@ const TableScreen1 = ({ data, percentageMetric }) => {
             {percentageMetric}
           </th>
           <th style={{ width: "15%" }} className={kpiDisplay ? "toggle-display" : "toggle-display in"}>
-            <Button className={kpiDisplay ? "toggle-display" : "toggle-display in"} onClick={toggleKPIs}>Toggle KPIs</Button>
+            <Button style={{backgroundColor: "transparent", border: "none"}} className={kpiDisplay ? "toggle-display" : "toggle-display in"} onClick={toggleKPIs}>Toggle KPIs <FontAwesomeIcon icon="plus-circle" /></Button>
           </th>
           <th className={kpiDisplay ? "toggle-display in" : "toggle-display"}>
             Iterations per design
@@ -221,8 +225,9 @@ const TableScreen1 = ({ data, percentageMetric }) => {
             Design digitization
           </th>
           <th className={kpiDisplay ? "toggle-display in" : "toggle-display"}>
-            SME involvement
+            SME involvement 
           </th>
+          <th className={kpiDisplay ? "toggle-display in" : "toggle-display"}><FontAwesomeIcon className="hover-hand" onClick={() => toggleKPIs()} icon="minus-circle" /></th>
           <th style={{ width: "7%" }}>
             Forecasted risk
           </th>

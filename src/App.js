@@ -2,6 +2,10 @@ import DropdownsContainer from './Containers/DropdownsContainer';
 import TableContainer from './Containers/TableContainer';
 import { data } from './data';
 import React, {useState} from 'react';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faPlusCircle, faMinusCircle } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faPlusCircle, faMinusCircle)
 
 const App = () => {
   
