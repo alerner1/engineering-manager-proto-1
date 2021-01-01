@@ -11,6 +11,7 @@ const TableScreen1 = ({ data, percentageMetric }) => {
   const [kpiDisplay, setKpiDisplay] = useState(false);
   const [subdivisionDisplay, setSubdivisionDisplay] = useState(false);
 
+  // can animate these toggles with bootstrap collapse eventually
   const toggleKPIs = () => {
     setKpiDisplay(!kpiDisplay);
   }
@@ -103,7 +104,7 @@ const TableScreen1 = ({ data, percentageMetric }) => {
         <td className={kpiDisplay ? "toggle-display in" : "toggle-display"}>
           {row["SME Involvement"]}
         </td>
-        <td className={kpiDisplay ? "toggle-display in" : "toggle-display"} style={{ border: 'none' }}></td>
+        <td className={kpiDisplay ? "toggle-display in" : "toggle-display"} ></td>
         <td>
           {forecastRisk(row["Forecasted Risk"])}
         </td>
