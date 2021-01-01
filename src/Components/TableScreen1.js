@@ -3,7 +3,7 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import { v4 as uuidv4 } from 'uuid';
 import { VictoryChart, VictoryAxis, VictoryBar, VictoryLabel, VictoryStack } from 'victory';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const TableScreen1 = ({ data, percentageMetric }) => {
 
@@ -11,13 +11,66 @@ const TableScreen1 = ({ data, percentageMetric }) => {
   const [subdivisionDisplay, setSubdivisionDisplay] = useState(false);
 
   const toggleKPIs = () => {
-    setKpiDisplay(!kpiDisplay)
+    setKpiDisplay(!kpiDisplay);
   }
 
-  const divisionsList = [];
+  const toggleSubdivisions = () => {
+    setSubdivisionDisplay(!subdivisionDisplay);
+  }
 
+  const mapDivisionRows = () => {
+    // could probably do this with hooks bc we need the list for all situations
+    // might also be more effective to take averages as soon as loaded so you can 
+    // toggle faster
+    // honestly this whole thing is very inefficient -- we're iterating over the array
+    // way too many times
+    // luckily it's a small array
+    // but find a more efficient way to do it in the long run
+    const divisionsList = [];
+    for (let row of data) {
+      if (!divisionsList.includes(row["Division"])) {
+        divisionsList.push(row["Division"])
+      }
+    }
+
+    for (let division of divisionsList) {
+      console.log(getAverages(division))
+    }
+    
+  }
+
+  useEffect(() => {mapDivisionRows()}, [])
+
+  const getAverages = (division) => {
+    const averagedRow = {
+      "% Design Errors": 0,
+      "% Schedule delays": 0,
+      "% Cost overrun": 0,
+      "Iterations per design": 0,
+      "% Rushed design": 0,
+      "Digital design": 0,
+      "SME Involvement": 0,
+      "Forecasted Risk": 0
+    };
+    const allRows = data.filter(row => {return row["Division"] === division})
+
+    for (let row of allRows) {
+      for (let key in averagedRow) {
+        averagedRow[key] += row[key];
+      }
+    }
+    
+    for (let key in averagedRow) {
+      averagedRow[key] = Math.round(averagedRow[key]/allRows.length);
+    }
+
+    return averagedRow;
+  }
+
+  
   const mapRows = () => {
-    return data.map((row, index) => {
+    const divisionsList = [];
+    return data.map((row) => {
       let flag = false;
       if (!divisionsList.includes(row["Division"])) {
         divisionsList.push(row["Division"]);
@@ -28,7 +81,7 @@ const TableScreen1 = ({ data, percentageMetric }) => {
 
         {flag ? <td>{row["Division"]}</td> : <td style={{ border: 'none' }}></td>}
 
-        <td>
+        <td className={subdivisionDisplay ? "toggle-display in" : "toggle-display"}>
           {row["Subdivision"]}
         </td>
         <td>
@@ -147,7 +200,7 @@ const TableScreen1 = ({ data, percentageMetric }) => {
           <th style={{ width: '12%' }}>
             Division
           </th>
-          <th>
+          <th className={subdivisionDisplay ? "toggle-display in" : "toggle-display"}>
             Subdivision
           </th>
           <th style={{ width: "35%" }}>
