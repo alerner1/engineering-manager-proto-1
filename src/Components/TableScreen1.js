@@ -27,6 +27,7 @@ const TableScreen1 = ({ data, percentageMetric }) => {
     // luckily it's a small array
     // but find a more efficient way to do it in the long run
     const divisionsList = [];
+    const divisionRows = [];
     for (let row of data) {
       if (!divisionsList.includes(row["Division"])) {
         divisionsList.push(row["Division"])
@@ -34,12 +35,11 @@ const TableScreen1 = ({ data, percentageMetric }) => {
     }
 
     for (let division of divisionsList) {
-      console.log(getAverages(division))
+      divisionRows.push(getAverages(division))
     }
     
+    return mapRows(divisionRows)
   }
-
-  useEffect(() => {mapDivisionRows()}, [])
 
   const getAverages = (division) => {
     const averagedRow = {
@@ -64,13 +64,15 @@ const TableScreen1 = ({ data, percentageMetric }) => {
       averagedRow[key] = Math.round(averagedRow[key]/allRows.length);
     }
 
+    averagedRow["Division"] = division
+
     return averagedRow;
   }
 
   
-  const mapRows = () => {
+  const mapRows = (rowData) => {
     const divisionsList = [];
-    return data.map((row) => {
+    return rowData.map((row) => {
       let flag = false;
       if (!divisionsList.includes(row["Division"])) {
         divisionsList.push(row["Division"]);
@@ -227,7 +229,7 @@ const TableScreen1 = ({ data, percentageMetric }) => {
         </tr>
       </thead>
       <tbody>
-        {mapRows()}
+        {subdivisionDisplay ? mapRows(data) : mapDivisionRows()}
       </tbody>
     </Table>
   );
