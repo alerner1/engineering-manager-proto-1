@@ -204,17 +204,19 @@ const TableScreen1 = ({ data, percentageMetric }) => {
       <thead>
         <tr>
           <th style={{ width: '12%' }}>
+          <div className="hover-hand" onClick={() => toggleSubdivisions()}>
             Division &nbsp;
-            {subdivisionDisplay ? <FontAwesomeIcon className="hover-hand" onClick={() => toggleSubdivisions()} icon="minus-circle" /> : <FontAwesomeIcon className="hover-hand" onClick={() => toggleSubdivisions()} icon="plus-circle" />}
+            {subdivisionDisplay ? <FontAwesomeIcon className="hover-hand" icon="minus-circle" /> : <FontAwesomeIcon className="hover-hand" icon="plus-circle" />}
+            </div>
           </th>
           <th className={subdivisionDisplay ? "toggle-display in" : "toggle-display"}>
             Subdivision
           </th>
-          <th style={{ width: "60%" }}>
+          <th style={{ width: "50%" }}>
             {percentageMetric}
           </th>
           <th style={{ width: "15%" }} className={kpiDisplay ? "toggle-display" : "toggle-display in"}>
-            <Button style={{backgroundColor: "transparent", border: "none"}} className={kpiDisplay ? "toggle-display" : "toggle-display in"} onClick={toggleKPIs}>Toggle KPIs <FontAwesomeIcon icon="plus-circle" /></Button>
+            <Button style={{backgroundColor: "transparent", border: "2px solid white"}} className={kpiDisplay ? "toggle-display" : "toggle-display in"} onClick={toggleKPIs}>Display design performance KPIs <FontAwesomeIcon icon="plus-circle" /></Button>
           </th>
           <th className={kpiDisplay ? "toggle-display in" : "toggle-display"}>
             Iterations per design
