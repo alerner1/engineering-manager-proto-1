@@ -4,11 +4,14 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import DisplayDropdown from '../Components/DisplayDropdown';
 import {v4 as uuidv4} from 'uuid';
+import { data } from '../data';
 
 const DropdownsContainer = ({percentageMetric, onPercentageMetricChange}) => {
   const mapDropdowns = () => {
     return dropdownsList.map((dropdown) => <DisplayDropdown key={uuidv4()} info={dropdown}  />);
   }
+
+ 
 
   return(
     <Row>
@@ -28,6 +31,17 @@ const DropdownsContainer = ({percentageMetric, onPercentageMetricChange}) => {
 
 export default DropdownsContainer;
 
+
+const mapDivisions = () => {
+  const divisionsList = ['(All)'];
+  for (let row of data) {
+    if (!divisionsList.includes(row["Division"])) {
+      divisionsList.push(row["Division"])
+    }
+  }
+  return divisionsList;
+}
+
 const dropdownsList = [
   {
     title: "Select KPIs to display",
@@ -41,11 +55,6 @@ const dropdownsList = [
   },
   {
     title: "Filter on business unit",
-    options: [
-      "(All)",
-      "Commercial",
-      "Government",
-      "Bespoke"
-    ]
+    options: mapDivisions()
   }
 ];
