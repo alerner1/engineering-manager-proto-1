@@ -210,7 +210,7 @@ const TableScreen1 = ({ data, percentageMetric }) => {
           <th className={subdivisionDisplay ? "toggle-display in" : "toggle-display"}>
             Subdivision
           </th>
-          <th style={{ width: "35%" }}>
+          <th style={{ width: "60%" }}>
             {percentageMetric}
           </th>
           <th style={{ width: "15%" }} className={kpiDisplay ? "toggle-display" : "toggle-display in"}>
