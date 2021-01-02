@@ -2,9 +2,9 @@ import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
-import DisplayDropdown from '../Components/DisplayDropdown';
+import DisplayDropdown from '../DisplayDropdown';
 import {v4 as uuidv4} from 'uuid';
-import { data } from '../data';
+import { data } from '../../../data';
 
 const DropdownsContainer = ({ kpiFilter, unitFilter, handleFilter, percentageMetric, onPercentageMetricChange}) => {
   const mapDropdowns = () => {

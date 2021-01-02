@@ -1,5 +1,5 @@
-import DropdownsContainer from './Containers/DropdownsContainer';
-import TableContainer from './Containers/TableContainer';
+import DropdownsContainer from './Screen1/Components/Containers/DropdownsContainer';
+import TableContainer from './Screen1/Components/Containers/TableContainer';
 import { data } from './data';
 import React, {useState, useEffect} from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core'
