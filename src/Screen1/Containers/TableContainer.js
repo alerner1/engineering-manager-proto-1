@@ -1,5 +1,5 @@
 import React from 'react';
-import TableScreen1 from '../TableScreen1';
+import TableScreen1 from '../Components/TableScreen1';
 
 const TableContainer = ({kpiFilter, unitFilter, data, percentageMetric}) => {
   return(
