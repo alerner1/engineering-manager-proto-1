@@ -6,9 +6,9 @@ import DisplayDropdown from '../Components/DisplayDropdown';
 import {v4 as uuidv4} from 'uuid';
 import { data } from '../data';
 
-const DropdownsContainer = ({percentageMetric, onPercentageMetricChange}) => {
+const DropdownsContainer = ({ kpiFilter, unitFilter, handleFilter, percentageMetric, onPercentageMetricChange}) => {
   const mapDropdowns = () => {
-    return dropdownsList.map((dropdown) => <DisplayDropdown key={uuidv4()} info={dropdown}  />);
+    return dropdownsList.map((dropdown) => <DisplayDropdown kpiFilter={kpiFilter} handleFilter={handleFilter} unitFilter={unitFilter} key={uuidv4()} info={dropdown}  />);
   }
 
  
@@ -47,7 +47,7 @@ const dropdownsList = [
     title: "Select KPIs to display",
     options: [
       "(All)",
-      "Iterations per design review",
+      "Iterations per design",
       "% Rushed design",
       "Digital design",
       "SME Involvement"

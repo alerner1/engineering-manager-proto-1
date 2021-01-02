@@ -1,9 +1,9 @@
 import React from 'react';
 import TableScreen1 from '../Components/TableScreen1';
 
-const TableContainer = ({data, percentageMetric}) => {
+const TableContainer = ({kpiFilter, unitFilter, data, percentageMetric}) => {
   return(
-    <TableScreen1 data={data} percentageMetric={percentageMetric} />
+    <TableScreen1 data={data} kpiFilter={kpiFilter} unitFilter={unitFilter} percentageMetric={percentageMetric} />
   );
 }
 

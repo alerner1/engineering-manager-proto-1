@@ -6,7 +6,7 @@ import { VictoryChart, VictoryAxis, VictoryBar, VictoryLabel, VictoryStack } fro
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const TableScreen1 = ({ data, percentageMetric }) => {
+const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
 
   const [kpiDisplay, setKpiDisplay] = useState(false);
   const [subdivisionDisplay, setSubdivisionDisplay] = useState(false);
@@ -29,7 +29,7 @@ const TableScreen1 = ({ data, percentageMetric }) => {
   // but find a more efficient way to do it in the long run
   const mapDivisionRows = () => {
     const divisionsList = [];
-    const divisionRows = [];
+    let divisionRows = [];
     for (let row of data) {
       if (!divisionsList.includes(row["Division"])) {
         divisionsList.push(row["Division"])
@@ -73,6 +73,10 @@ const TableScreen1 = ({ data, percentageMetric }) => {
 
   
   const mapRows = (rowData) => {
+    if (unitFilter !== "(All)") {
+      rowData = rowData.filter(row => {return row["Division"] === unitFilter})
+    }
+
     const divisionsList = [];
     return rowData.map((row) => {
       let flag = false;
@@ -92,16 +96,16 @@ const TableScreen1 = ({ data, percentageMetric }) => {
           {createBar(row[percentageMetric])}
         </td>
         <td className={kpiDisplay ? "toggle-display" : "toggle-display in"} style={{ border: 'none' }}></td>
-        <td className={kpiDisplay ? "toggle-display in" : "toggle-display"}>
+        <td className={checkIfDisplayed('Iterations per design')}>
           {row["Iterations per design"]}
         </td>
-        <td className={kpiDisplay ? "toggle-display in" : "toggle-display"}>
+        <td className={checkIfDisplayed('% Rushed design')}>
           {row["% Rushed design"]}
         </td>
-        <td className={kpiDisplay ? "toggle-display in" : "toggle-display"}>
+        <td className={checkIfDisplayed('Digital design')}>
           {row["Digital design"]}
         </td>
-        <td className={kpiDisplay ? "toggle-display in" : "toggle-display"}>
+        <td className={checkIfDisplayed('SME Involvment')}>
           {row["SME Involvement"]}
         </td>
         <td className={kpiDisplay ? "toggle-display in" : "toggle-display"} ></td>
@@ -144,6 +148,21 @@ const TableScreen1 = ({ data, percentageMetric }) => {
         }}
       />
     </VictoryChart>
+  }
+
+  const checkIfDisplayed = (column) => {
+    if (!kpiDisplay) {
+      return "toggle-display";
+    }
+    else {
+      if (kpiFilter !== '(All)') {
+        if (kpiFilter === column) {
+          return "toggle-display in";
+        } else {
+          return "toggle-display";
+        }
+      }
+    }
   }
 
   const createBar = (dataPoint) => {
@@ -204,6 +223,7 @@ const TableScreen1 = ({ data, percentageMetric }) => {
       <thead>
         <tr>
           <th style={{ width: '12%' }}>
+            {/* hover/click thing is a little messed up, try to fix */}
           <div className="hover-hand" onClick={() => toggleSubdivisions()}>
             Division &nbsp;
             {subdivisionDisplay ? <FontAwesomeIcon className="hover-hand" icon="minus-circle" /> : <FontAwesomeIcon className="hover-hand" icon="plus-circle" />}
@@ -218,16 +238,16 @@ const TableScreen1 = ({ data, percentageMetric }) => {
           <th style={{ width: "15%" }} className={kpiDisplay ? "toggle-display" : "toggle-display in"}>
             <Button style={{backgroundColor: "transparent", border: "2px solid white"}} className={kpiDisplay ? "toggle-display" : "toggle-display in"} onClick={toggleKPIs}>Display design performance KPIs <FontAwesomeIcon icon="plus-circle" /></Button>
           </th>
-          <th className={kpiDisplay ? "toggle-display in" : "toggle-display"}>
+          <th className={checkIfDisplayed('Iterations per design')}>
             Iterations per design
           </th>
-          <th className={kpiDisplay ? "toggle-display in" : "toggle-display"}>
+          <th className={checkIfDisplayed('% Rushed design')}>
             Rushed design
           </th>
-          <th className={kpiDisplay ? "toggle-display in" : "toggle-display"}>
+          <th className={checkIfDisplayed('Design digitization')}>
             Design digitization
           </th>
-          <th className={kpiDisplay ? "toggle-display in" : "toggle-display"}>
+          <th className={checkIfDisplayed('SME involvement')}>
             SME involvement 
           </th>
           <th className={kpiDisplay ? "toggle-display in" : "toggle-display"}><FontAwesomeIcon className="hover-hand" onClick={() => toggleKPIs()} icon="minus-circle" /></th>
