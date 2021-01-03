@@ -1,14 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router';
 import { dataScreen2 } from '../../dataScreen2';
+import DropdownsContainer2 from './DropdownsContainer2';
 
 const Screen2Container = () => {
+  const [percentageMetric, setPercentageMetric] = useState("% Design Errors");
+  const [productFilter, setProductFilter] = useState("(All)");
+
   let { name } = useParams();
 
   const subData = dataScreen2.filter(row => {return row["Subdivision"] === name});
 
+
+  const onPercentageMetricChange = (choice) => {
+    setPercentageMetric(choice)
+  };
+
+  const handleFilter = (value) => {
+    setProductFilter(value);
+  };
+
   return(
-    <p>hi {subData[0]["subdivisionId"]}</p>
+    <div className="p-3">
+      <DropdownsContainer2 productFilter={productFilter} handleFilter={handleFilter} percentageMetric={percentageMetric} onPercentageMetricChange={onPercentageMetricChange}/>
+    </div>
   );
 }
 
