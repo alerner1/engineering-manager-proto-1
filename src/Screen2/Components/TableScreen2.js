@@ -1,9 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import Konva from 'konva';
+import { Stage, Layer, Line } from 'react-konva';
 import Table from 'react-bootstrap/Table';
 import { v4 as uuidv4 } from 'uuid';
 
 const TableScreen2 = ({ productFilter, data, percentageMetric }) => {
+  const [width, setWidth] = useState(0);
+  const elementRef = useRef(null);
 
+  // obviously will need to turn these triangles into their own components
+  useEffect(() => {
+    // if (!elementRef.current) {return}
+    setWidth(elementRef.current.attrs.container.offsetWidth);
+  }, [elementRef.current]);
+    
   // ok this is dumb you know all the products and departments just set them manually
   // if you have to do it programmatically later you can do that with the help of a solid backend
 
@@ -23,6 +33,16 @@ const TableScreen2 = ({ productFilter, data, percentageMetric }) => {
     // so it's not a toggle for all three?
     // ok w/e we can leave the toggle there and just not have it do anything for now
     // so yes it is the intersection of them and then we just need the triangles based on schedule delays and design errors
+    // ok cool we're gonna use canvas for the triangles
+    // console.log(elementRef.current.attrs.container.offsetWidth)
+  }
+
+  const getTriangle = () => {
+    return (<Stage ref={elementRef} width={width} height={40}>
+      <Layer>
+        <Line closed points={[4, 4, width-4, 4, width-4, 36]} fill='red' stroke='black' strokeWidth={4} />
+      </Layer>
+    </Stage>)
   }
 
   return(
@@ -58,6 +78,9 @@ const TableScreen2 = ({ productFilter, data, percentageMetric }) => {
           <th>
             Product 2
           </th>
+          <td>
+            {getTriangle()}
+          </td>
         </tr>
         <tr>
           <th>
