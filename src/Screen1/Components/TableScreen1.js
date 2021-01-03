@@ -4,9 +4,11 @@ import Button from 'react-bootstrap/Button';
 import { v4 as uuidv4 } from 'uuid';
 import { VictoryChart, VictoryAxis, VictoryBar, VictoryLabel, VictoryStack } from 'victory';
 import React, { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useHistory } from 'react-router-dom';
 
 const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
+  const history = useHistory();
 
   const [kpiDisplay, setKpiDisplay] = useState(false);
   const [subdivisionDisplay, setSubdivisionDisplay] = useState(false);
@@ -71,6 +73,10 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
     return averagedRow;
   }
 
+  const redirectScreen2 = (subdivisionName) => {
+    history.push(`/subdivisions/${subdivisionName}`)
+  }
+
   
   const mapRows = (rowData) => {
     if (unitFilter !== "(All)") {
@@ -89,7 +95,7 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
 
         {flag ? <td>{row["Division"]}</td> : <td style={{ border: 'none' }}></td>}
 
-        <td className={subdivisionDisplay ? "toggle-display in" : "toggle-display"}>
+        <td onClick={event => redirectScreen2(event.target.innerText)} className={subdivisionDisplay ? "toggle-display in" : "toggle-display"}>
           {row["Subdivision"]}
         </td>
         <td>
