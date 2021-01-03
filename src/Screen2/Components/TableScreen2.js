@@ -38,9 +38,11 @@ const TableScreen2 = ({ productFilter, data, percentageMetric }) => {
   }
 
   const getTriangle = () => {
+    // this appears to be working, just make it its own component with props for the colors
     return (<Stage ref={elementRef} width={width} height={40}>
       <Layer>
-        <Line closed points={[4, 4, width-4, 4, width-4, 36]} fill='red' stroke='black' strokeWidth={4} />
+        <Line closed points={[0, 0, width, 0, width, 40]} fill='red' stroke='black' strokeWidth={1} />
+        <Line closed points={[width, 40, 0, 40, 0, 0]} fill='green' stroke='black' strokeWidth={1} />
       </Layer>
     </Stage>)
   }
@@ -86,6 +88,9 @@ const TableScreen2 = ({ productFilter, data, percentageMetric }) => {
           <th>
             Product 3
           </th>
+          <td>
+
+          </td>
         </tr>
         <tr>
           <th>
