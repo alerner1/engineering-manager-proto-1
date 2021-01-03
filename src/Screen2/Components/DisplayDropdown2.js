@@ -3,7 +3,7 @@ import { Form } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
 import {v4 as uuidv4} from 'uuid';
 
-const DisplayDropdown2 = ({ kpiFilter, unitFilter, handleFilter, info }) => {
+const DisplayDropdown2 = ({ productFilter, handleFilter, info }) => {
   const mapOptions = () => {
     return info.options.map(option => <option key={uuidv4()}>{option}</option>);
   }
@@ -14,7 +14,7 @@ const DisplayDropdown2 = ({ kpiFilter, unitFilter, handleFilter, info }) => {
         <Form.Label>{info.title}</Form.Label>
         {/* this system only works well for two dropdowns
         if adding more use a switch function or something */}
-        <Form.Control value={info.title === "Filter on business unit" ? unitFilter : kpiFilter } onChange={(event) => handleFilter(event.target.id, event.target.value)} size="sm" as="select">
+        <Form.Control value={ productFilter } onChange={(event) => handleFilter(event.target.value)} size="sm" as="select">
           {mapOptions()}
         </Form.Control>
       </Form.Group>
