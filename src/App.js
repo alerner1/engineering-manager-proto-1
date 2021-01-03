@@ -11,7 +11,7 @@ const App = () => {
 
   return (
     <Switch>
-      <Route path="/subdivisions/:id" children={<Screen2Container />} />
+      <Route path="/subdivisions/:name" children={<Screen2Container />} />
       <Route path="/" render={() => <Screen1Container />} />
     </Switch>
   );
