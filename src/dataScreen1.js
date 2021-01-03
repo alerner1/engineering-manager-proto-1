@@ -1,4 +1,4 @@
-export const data = [
+export const dataScreen1 = [
   {
     "Business Unit": "Commercial",
     "Division": "Car Powertrain Technology",

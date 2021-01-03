@@ -2,13 +2,13 @@ import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
-import DisplayDropdown from '../Components/DisplayDropdown';
+import DisplayDropdown1 from '../Components/DisplayDropdown1';
 import {v4 as uuidv4} from 'uuid';
-import { data } from '../../../data';
+import { dataScreen1 } from '../../dataScreen1';
 
-const DropdownsContainer = ({ kpiFilter, unitFilter, handleFilter, percentageMetric, onPercentageMetricChange}) => {
+const DropdownsContainer1 = ({ kpiFilter, unitFilter, handleFilter, percentageMetric, onPercentageMetricChange}) => {
   const mapDropdowns = () => {
-    return dropdownsList.map((dropdown) => <DisplayDropdown kpiFilter={kpiFilter} handleFilter={handleFilter} unitFilter={unitFilter} key={uuidv4()} info={dropdown}  />);
+    return dropdownsList.map((dropdown) => <DisplayDropdown1 kpiFilter={kpiFilter} handleFilter={handleFilter} unitFilter={unitFilter} key={uuidv4()} info={dropdown}  />);
   }
 
  
@@ -29,12 +29,12 @@ const DropdownsContainer = ({ kpiFilter, unitFilter, handleFilter, percentageMet
   );
 };
 
-export default DropdownsContainer;
+export default DropdownsContainer1;
 
 
 const mapDivisions = () => {
   const divisionsList = ['(All)'];
-  for (let row of data) {
+  for (let row of dataScreen1) {
     if (!divisionsList.includes(row["Division"])) {
       divisionsList.push(row["Division"])
     }

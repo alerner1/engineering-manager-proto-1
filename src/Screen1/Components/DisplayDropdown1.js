@@ -3,7 +3,7 @@ import { Form } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
 import {v4 as uuidv4} from 'uuid';
 
-const DisplayDropdown = ({ kpiFilter, unitFilter, handleFilter, info }) => {
+const DisplayDropdown1 = ({ kpiFilter, unitFilter, handleFilter, info }) => {
   const mapOptions = () => {
     return info.options.map(option => <option key={uuidv4()}>{option}</option>);
   }
@@ -22,4 +22,4 @@ const DisplayDropdown = ({ kpiFilter, unitFilter, handleFilter, info }) => {
   );
 };
 
-export default DisplayDropdown;
+export default DisplayDropdown1;
