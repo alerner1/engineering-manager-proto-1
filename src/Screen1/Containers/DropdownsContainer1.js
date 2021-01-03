@@ -16,6 +16,8 @@ const DropdownsContainer1 = ({ kpiFilter, unitFilter, handleFilter, percentageMe
   return(
     <Row>
       {mapDropdowns()}
+      <Col xs={3}>
+      </Col>
       <Col>
         <Form onChange={event => onPercentageMetricChange(event.target.value)}>
           <div key="default-radio" className="mb-3">

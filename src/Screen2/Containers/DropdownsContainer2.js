@@ -15,6 +15,8 @@ const DropdownsContainer2 = ({ productFilter, handleFilter, percentageMetric, on
   return(
     <Row>
       {mapDropdowns()}
+      <Col xs={6}>
+      </Col>
       <Col>
         <Form onChange={event => onPercentageMetricChange(event.target.value)}>
           <div key="default-radio" className="mb-3">
