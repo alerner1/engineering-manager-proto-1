@@ -1,4 +1,5 @@
 import Screen1Container from './Screen1/Containers/Screen1Container';
+import Screen2Container from './Screen2/Containers/Screen2Container';
 import React, {useState, useEffect} from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -9,7 +10,10 @@ library.add(faPlusCircle, faMinusCircle)
 const App = () => {
 
   return (
-    <Screen1Container />
+    <Switch>
+      <Route path="/subdivisions/:id" children={<Screen2Container />} />
+      <Route path="/" render={() => <Screen1Container />} />
+    </Switch>
   );
 }
 
