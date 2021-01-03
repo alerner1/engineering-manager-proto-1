@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router';
 import { dataScreen2 } from '../../dataScreen2';
 import DropdownsContainer2 from './DropdownsContainer2';
+import TableContainer2 from './TableContainer2';
 
 const Screen2Container = () => {
   const [percentageMetric, setPercentageMetric] = useState("% Design Errors");
@@ -21,9 +22,14 @@ const Screen2Container = () => {
   };
 
   return(
-    <div className="p-3">
-      <DropdownsContainer2 productFilter={productFilter} handleFilter={handleFilter} percentageMetric={percentageMetric} onPercentageMetricChange={onPercentageMetricChange}/>
-    </div>
+    <>
+      <div className="p-3">
+        <DropdownsContainer2 productFilter={productFilter} handleFilter={handleFilter} percentageMetric={percentageMetric} onPercentageMetricChange={onPercentageMetricChange}/>
+      </div>
+      <div className="p-3">
+        <TableContainer2 productFilter={productFilter} data={subData} percentageMetric={percentageMetric} />
+      </div>
+    </>
   );
 }
 
