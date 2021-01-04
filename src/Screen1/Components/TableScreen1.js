@@ -95,7 +95,7 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
 
         {flag ? <td>{row["Division"]}</td> : <td style={{ border: 'none' }}></td>}
 
-        <td onClick={event => redirectScreen2(event.target.innerText)} className={subdivisionDisplay ? "toggle-display in" : "toggle-display"}>
+        <td onClick={event => redirectScreen2(event.target.innerText)} className={`hover-hand ${subdivisionDisplay ? "toggle-display in" : "toggle-display"}`}>
           {row["Subdivision"]}
         </td>
         <td>
@@ -185,11 +185,11 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
 
       <VictoryChart maxDomain={{ y: 100 }} horizontal height={10} width={100} padding={{ top: 2, bottom: 8 }}>
         <VictoryStack
-          style={{ labels: { fill: "white", fontSize: 4 } }}
+          style={{ labels: { fill: "lightskyblue", fontSize: 4 } }}
         >
           <VictoryBar
             cornerRadius={{ bottomLeft: 2, bottomRight: 2 }}
-            style={{ data: { fill: color, width: 4, stroke: "gray", strokeWidth: 0.5 } }}
+            style={{ data: { fill: color, width: 4, stroke: "whitesmoke", strokeWidth: 0.5 } }}
             data={formattedData}
             labels={() => (`${dataPoint}%`)}
             labelComponent={
@@ -198,7 +198,7 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
           />
           <VictoryBar
             cornerRadius={2}
-            style={{ data: { fill: "darkslategray", width: 4, stroke: "gray", strokeWidth: 0.5 } }}
+            style={{ data: { fill: "white", width: 4, stroke: "whitesmoke", strokeWidth: 0.5 } }}
             data={[{ x: 0, y: 100 - dataPoint }]}
           />
         </VictoryStack>
