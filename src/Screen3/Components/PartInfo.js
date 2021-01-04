@@ -2,6 +2,7 @@ import Card from 'react-bootstrap/Card';
 import Table from 'react-bootstrap/Table';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import partcadimg from '../../partcadimg.png';
 
 const PartInfo = () => {
   return(
@@ -44,7 +45,7 @@ const PartInfo = () => {
           </Col>
           <Col>
             <div className="text-center">
-              <Card.Img variant="bottom" src="https://pixnio.com/free-images/2018/11/27/2018-11-27-15-42-14-1200x786.jpg" />
+              <Card.Img variant="bottom" src={partcadimg} />
             </div>
           </Col>
         </Row>
