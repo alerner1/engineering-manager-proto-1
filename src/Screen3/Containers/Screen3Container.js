@@ -3,6 +3,7 @@ import PartInfo from '../Components/PartInfo';
 import DesignReviewProcess from '../Components/DesignReviewProcess';
 import RiskAlerts from '../Components/RiskAlerts';
 import PredictedRisk from '../Components/PredictedRisk';
+import WorkflowsExecuted from '../Components/WorkflowsExecuted';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -25,6 +26,14 @@ const Screen3Container = () => {
         </Col>
         <Col>
           <PredictedRisk />
+        </Col>
+      </Row>
+      <hr />
+      <Row>
+        <Col>
+          <WorkflowsExecuted />
+        </Col>
+        <Col>
         </Col>
       </Row>
     </Container>
