@@ -17,9 +17,9 @@ const DesignReviewChart = () => {
       horizontal 
       maxDomain={{ x: 3.5, y: 120 }} 
       minDomain={{ x: 1.5, y: 0 }}
-      height={width/3}
+      height={width/5}
       width={width}
-      padding={{top: 1, bottom: 40, left: 50, right: 20}}
+      padding={{top: 1, bottom: 40, left: 55, right: 20}}
       >
       <VictoryStack>
         <VictoryBar 
