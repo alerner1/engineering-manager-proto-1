@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { VictoryChart, VictoryLegend, VictoryAxis, VictoryBar, VictoryStack, VictoryLabel } from 'victory';
+import { VictoryChart, VictoryLegend, VictoryLine, VictoryAxis, VictoryBar, VictoryStack, VictoryLabel } from 'victory';
 
 const DesignReviewChart = () => {
   const [width, setWidth] = useState(0);
@@ -74,6 +74,12 @@ const DesignReviewChart = () => {
       <VictoryStack>
 
       </VictoryStack>
+      <VictoryLine 
+        data={[
+          {x: 1.5, y: 120},
+          {x: 3, y: 120}
+        ]}
+      />
       <VictoryAxis 
         dependentAxis 
         tickValues={[1, 60, 120]} 
