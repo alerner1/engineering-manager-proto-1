@@ -3,16 +3,9 @@ import Konva from 'konva';
 import { Stage, Layer, Line } from 'react-konva';
 import Table from 'react-bootstrap/Table';
 import { v4 as uuidv4 } from 'uuid';
+import Triangles from './Triangles';
 
 const TableScreen2 = ({ productFilter, data, percentageMetric }) => {
-  const [width, setWidth] = useState(0);
-  const elementRef = useRef(null);
-
-  // obviously will need to turn these triangles into their own components
-  useEffect(() => {
-    // if (!elementRef.current) {return}
-    setWidth(elementRef.current.attrs.container.offsetWidth);
-  }, [elementRef.current]);
     
   // ok this is dumb you know all the products and departments just set them manually
   // if you have to do it programmatically later you can do that with the help of a solid backend
@@ -35,16 +28,9 @@ const TableScreen2 = ({ productFilter, data, percentageMetric }) => {
     // so yes it is the intersection of them and then we just need the triangles based on schedule delays and design errors
     // ok cool we're gonna use canvas for the triangles
     // console.log(elementRef.current.attrs.container.offsetWidth)
-  }
-
-  const getTriangle = () => {
-    // this appears to be working, just make it its own component with props for the colors
-    return (<Stage ref={elementRef} width={width} height={40}>
-      <Layer>
-        <Line closed points={[0, 0, width, 0, width, 40]} fill='red' stroke='black' strokeWidth={1} />
-        <Line closed points={[width, 40, 0, 40, 0, 0]} fill='green' stroke='black' strokeWidth={1} />
-      </Layer>
-    </Stage>)
+    const thisProduct = data.filter(row => {return row["Product"] === product});
+    thisProduct.sort((a, b) => (a["Department"] > b["Department"]) ? 1 : -1)
+    return thisProduct.map(row => <td className=""><Triangles row={row} /></td>)
   }
 
   return(
@@ -80,27 +66,25 @@ const TableScreen2 = ({ productFilter, data, percentageMetric }) => {
           <th>
             Product 2
           </th>
-          <td>
-            {getTriangle()}
-          </td>
+          {mapRow("Product 2")}
         </tr>
         <tr>
           <th>
             Product 3
           </th>
-          <td>
-
-          </td>
+          {mapRow("Product 3")}
         </tr>
         <tr>
           <th>
             Product 4
           </th>
+          {mapRow("Product 4")}
         </tr>
         <tr>
           <th>
             Product 5
           </th>
+          {mapRow("Product 5")}
         </tr>
       </tbody>
     </Table>
