@@ -185,11 +185,11 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
 
       <VictoryChart maxDomain={{ y: 100 }} horizontal height={10} width={100} padding={{ top: 2, bottom: 8 }}>
         <VictoryStack
-          style={{ labels: { fill: "lightskyblue", fontSize: 4 } }}
+          style={{ labels: { fill: "midnightblue", fontSize: 4 } }}
         >
           <VictoryBar
             cornerRadius={{ bottomLeft: 2, bottomRight: 2 }}
-            style={{ data: { fill: color, width: 4, stroke: "whitesmoke", strokeWidth: 0.5 } }}
+            style={{ data: { fill: color, width: 4, stroke: "lightgray", strokeWidth: 0.5 } }}
             data={formattedData}
             labels={() => (`${dataPoint}%`)}
             labelComponent={
@@ -198,7 +198,7 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
           />
           <VictoryBar
             cornerRadius={2}
-            style={{ data: { fill: "white", width: 4, stroke: "whitesmoke", strokeWidth: 0.5 } }}
+            style={{ data: { fill: "white", width: 4, stroke: "lightgray", strokeWidth: 0.5 } }}
             data={[{ x: 0, y: 100 - dataPoint }]}
           />
         </VictoryStack>
@@ -242,7 +242,7 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
             {percentageMetric}
           </th>
           <th style={{ width: "15%" }} className={kpiDisplay ? "toggle-display" : "toggle-display in"}>
-            <Button style={{backgroundColor: "transparent", border: "2px solid white"}} className={kpiDisplay ? "toggle-display" : "toggle-display in"} onClick={toggleKPIs}>Display design performance KPIs <FontAwesomeIcon icon="plus-circle" /></Button>
+            <Button style={{color: "midnightblue", backgroundColor: "transparent", border: "2px solid lightgray"}} className={kpiDisplay ? "toggle-display" : "toggle-display in"} onClick={toggleKPIs}>Display design performance KPIs <FontAwesomeIcon icon="plus-circle" /></Button>
           </th>
           <th className={checkIfDisplayed('Iterations per design')}>
             Iterations per design
