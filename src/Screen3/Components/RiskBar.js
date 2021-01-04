@@ -1,4 +1,4 @@
-import { VictoryChart, VictoryAxis, VictoryBar, VictoryLabel, VictoryStack } from 'victory';
+import { VictoryChart, VictoryAxis, VictoryBar, VictoryStack } from 'victory';
 
 const RiskBar = ({dataPoint}) => {
   const formattedData = [{ x: 0, y: dataPoint }];

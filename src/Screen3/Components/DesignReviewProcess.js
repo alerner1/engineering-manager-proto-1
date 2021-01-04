@@ -2,6 +2,7 @@ import Card from 'react-bootstrap/Card';
 import Table from 'react-bootstrap/Table';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import ListGroup from 'react-bootstrap/ListGroup';
+import DesignReviewChart from './DesignReviewChart';
 
 const DesignReviewProcess = () => {
   return(
@@ -11,6 +12,7 @@ const DesignReviewProcess = () => {
           Design and review process
         </Card.Title>
         <Card.Text>
+          <DesignReviewChart />
           <Table>
             <tbody>
               <tr>
