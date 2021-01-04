@@ -15,7 +15,7 @@ const DesignReviewChart = () => {
 
     <VictoryChart 
       horizontal 
-      maxDomain={{ x: 3.5, y: 120 }} 
+      maxDomain={{ x: 4.5, y: 150 }} 
       minDomain={{ x: 1.5, y: 0 }}
       height={width/5}
       width={width}
@@ -77,8 +77,12 @@ const DesignReviewChart = () => {
       <VictoryLine 
         data={[
           {x: 1.5, y: 120},
-          {x: 3, y: 120}
+          {x: 3.5, y: 120}
         ]}
+        labels={({datum}) => {if (datum.x === 3.5) return "System release deadline"}}
+        labelComponent={
+          <VictoryLabel textAnchor="middle" dy={-10} />
+        }
       />
       <VictoryAxis 
         dependentAxis 
