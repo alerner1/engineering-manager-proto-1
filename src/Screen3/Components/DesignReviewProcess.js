@@ -13,7 +13,7 @@ const DesignReviewProcess = () => {
         </Card.Title>
         <Card.Text>
           <DesignReviewChart />
-          <Table>
+          {/* <Table>
             <tbody>
               <tr>
                 <th style={{ border: 'none' }} className="font-small small-padding">
@@ -32,7 +32,7 @@ const DesignReviewProcess = () => {
                 </td>
               </tr>
             </tbody>
-          </Table>
+          </Table> */}
           <Card.Title>
               Review comment excerpts
           </Card.Title>

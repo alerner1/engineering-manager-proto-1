@@ -16,17 +16,30 @@ const DesignReviewChart = () => {
     <VictoryChart 
       
       horizontal 
-      maxDomain={{ x: 3.5 }} 
-      minDomain={{ x: 1.5 }}
-      height={width/2}
+      maxDomain={{ x: 3.5, y: 130 }} 
+      minDomain={{ x: 1.5, y: 0 }}
+      height={width/3}
       width={width}
       >
       <VictoryStack>
+        <VictoryBar />
       </VictoryStack>
       <VictoryStack>
 
       </VictoryStack>
-      <VictoryAxis dependentAxis tickValues={['January 1', 'March 1', 'May 1']} />
+      <VictoryAxis 
+        dependentAxis 
+        tickValues={[1, 60, 120]} 
+        tickFormat={(tick) => {
+          if (tick === 1) {
+            return 'January 1';
+          } else if (tick === 60) {
+            return 'March 1';
+          } else if (tick === 120) {
+            return 'May 1'
+          }
+        }}
+      />
       <VictoryAxis
         
         style={{
