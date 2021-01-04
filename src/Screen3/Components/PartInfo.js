@@ -3,7 +3,7 @@ import Table from 'react-bootstrap/Table';
 
 const PartInfo = () => {
   return(
-    <Card style={{width: '25rem'}}>
+    <Card className="h-100">
     <Card.Body className="p-3">
       <Card.Title>
         Part #212

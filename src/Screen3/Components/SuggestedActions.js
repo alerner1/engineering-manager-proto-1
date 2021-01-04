@@ -1,39 +1,31 @@
 import Card from 'react-bootstrap/Card';
 import Table from 'react-bootstrap/Table';
-import ProgressBar from 'react-bootstrap/ProgressBar';
+import Image from 'react-bootstrap/Image';
 
-const PredictedRisk = () => {
+const SuggestedActions = () => {
   return(
     <Card className="h-100">
       <Card.Body className="p-3">
         <Card.Title>
-          Predicted Risk
+          Suggested Actions
         </Card.Title>
         <Card.Text>
           <Table>
             <tbody>
               <tr>
-                <th className="font-small small-padding">
-                  Design error
-                </th>
                 <td className="font-small small-padding">
-                  <ProgressBar now={80} />
+                  <Image className="p-0" style={{height: '5vh'}} fluid src="https://cdn-blob-prd.azureedge.net/prd-pws/images/default-source/default-album/microsoft-teams-logo.png" />
+                </td>
+                <td className="font-small small-padding">
+                  Contact Xavier J.
                 </td>
               </tr>
               <tr>
-                <th className="font-small small-padding">
-                  Other avoidable revision
-                </th>
                 <td className="font-small small-padding">
-                  <ProgressBar now={20} />
+                  <Image className="p-0" style={{height: '5vh'}} fluid src="https://images.idgesg.net/images/article/2020/05/1055.outlook-logo-2_thumb_56da2757-100841646-large.jpg" />
                 </td>
-              </tr>
-              <tr>
-                <th className="font-small small-padding">
-                  Delayed design completion
-                </th>
                 <td className="font-small small-padding">
-                  <ProgressBar now={5} />
+                  Schedule a meeting with reviewers
                 </td>
               </tr>
             </tbody>
@@ -44,4 +36,4 @@ const PredictedRisk = () => {
   );
 };
 
-export default PredictedRisk;
+export default SuggestedActions;

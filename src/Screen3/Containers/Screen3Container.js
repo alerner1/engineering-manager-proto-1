@@ -4,6 +4,7 @@ import DesignReviewProcess from '../Components/DesignReviewProcess';
 import RiskAlerts from '../Components/RiskAlerts';
 import PredictedRisk from '../Components/PredictedRisk';
 import WorkflowsExecuted from '../Components/WorkflowsExecuted';
+import SuggestedActions from '../Components/SuggestedActions';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -34,6 +35,7 @@ const Screen3Container = () => {
           <WorkflowsExecuted />
         </Col>
         <Col>
+          <SuggestedActions />
         </Col>
       </Row>
     </Container>

@@ -5,8 +5,8 @@ import ListGroup from 'react-bootstrap/ListGroup';
 
 const DesignReviewProcess = () => {
   return(
-    <Card>
-      <Card.Body>
+    <Card className="h-100">
+      <Card.Body className="p-3">
         <Card.Title>
           Design and review process
         </Card.Title>

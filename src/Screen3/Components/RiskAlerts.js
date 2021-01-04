@@ -3,7 +3,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 
 const RiskAlerts = () => {
   return(
-    <Card style={{width: '25rem'}}>
+    <Card className="h-100">
       <Card.Body className="p-3">
         <Card.Title>
           Risk Alerts

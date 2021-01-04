@@ -4,7 +4,7 @@ import Image from 'react-bootstrap/Image';
 
 const WorkflowsExecuted = () => {
   return(
-    <Card style={{width: '25rem'}}>
+    <Card className="h-100">
       <Card.Body className="p-3">
         <Card.Title>
           Workflows Executed
