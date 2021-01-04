@@ -5,7 +5,7 @@ import Image from 'react-bootstrap/Image';
 const SuggestedActions = () => {
   return(
     <Card className="h-100">
-      <Card.Body className="p-3">
+      <Card.Body className="p-2">
         <Card.Title>
           Suggested Actions
         </Card.Title>
@@ -13,10 +13,10 @@ const SuggestedActions = () => {
           <Table>
             <tbody>
               <tr>
-                <td className="font-small small-padding">
+                <td style={{ border: 'none' }} className="font-small small-padding">
                   <Image className="p-0" style={{height: '5vh'}} fluid src="https://cdn-blob-prd.azureedge.net/prd-pws/images/default-source/default-album/microsoft-teams-logo.png" />
                 </td>
-                <td className="font-small small-padding">
+                <td style={{ border: 'none' }} className="font-small small-padding">
                   Contact Xavier J.
                 </td>
               </tr>

@@ -11,8 +11,8 @@ import Col from 'react-bootstrap/Col';
 
 const Screen3Container = () => {
   return(
-    <Container className="my-3">
-      <Row>
+    <Container className="my-2">
+      <Row className="pb-1">
         <Col>
           <PartInfo />
         </Col>
@@ -20,8 +20,7 @@ const Screen3Container = () => {
           <DesignReviewProcess />
         </Col>
       </Row>
-      <hr />
-      <Row>
+      <Row className="pb-1">
         <Col>
           <RiskAlerts />
         </Col>
@@ -29,7 +28,6 @@ const Screen3Container = () => {
           <PredictedRisk />
         </Col>
       </Row>
-      <hr />
       <Row>
         <Col>
           <WorkflowsExecuted />

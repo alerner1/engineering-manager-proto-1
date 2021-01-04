@@ -5,7 +5,7 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 const PredictedRisk = () => {
   return(
     <Card className="h-100">
-      <Card.Body className="p-3">
+      <Card.Body className="p-2">
         <Card.Title>
           Predicted Risk
         </Card.Title>
@@ -13,10 +13,10 @@ const PredictedRisk = () => {
           <Table>
             <tbody>
               <tr>
-                <th className="font-small small-padding">
+                <th style={{ border: 'none' }} className="font-small small-padding">
                   Design error
                 </th>
-                <td className="font-small small-padding">
+                <td style={{ border: 'none' }} className="font-small small-padding">
                   <ProgressBar now={80} />
                 </td>
               </tr>

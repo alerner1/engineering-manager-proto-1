@@ -1,15 +1,19 @@
 body {
   background-color: white;
-  color: lightskyblue !important;
+  color: deepskyblue !important;
 }
 
 .form-control {
   background-color: whitesmoke !important;
-  color: lightskyblue !important;
+  color: deepskyblue !important;
 }
 
 table {
-  color: lightskyblue !important;
+  color: midnightblue !important;
+}
+
+.list-group-item {
+  color: midnightblue !important;
 }
 
 // .with-chart {
@@ -45,3 +49,4 @@ svg {
   height: 20vh;
   object-fit: cover;
 }
+

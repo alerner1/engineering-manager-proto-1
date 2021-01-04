@@ -5,7 +5,7 @@ import Image from 'react-bootstrap/Image';
 const WorkflowsExecuted = () => {
   return(
     <Card className="h-100">
-      <Card.Body className="p-3">
+      <Card.Body className="p-2">
         <Card.Title>
           Workflows Executed
         </Card.Title>
@@ -13,10 +13,10 @@ const WorkflowsExecuted = () => {
           <Table>
             <tbody>
               <tr>
-                <td className="font-small small-padding">
+                <td style={{ border: 'none' }} className="font-small small-padding">
                   <Image className="p-0" style={{height: '5vh'}} fluid src="https://cdn.wccftech.com/wp-content/uploads/2020/09/Gmail.png" /> 
                 </td>
-                <td className="font-small small-padding">
+                <td style={{ border: 'none' }} className="font-small small-padding">
                   Program manager notified
                 </td>
               </tr>
