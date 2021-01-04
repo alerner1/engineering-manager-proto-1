@@ -3,8 +3,8 @@ import Table from 'react-bootstrap/Table';
 
 const PartInfo = () => {
   return(
-    <Card style={{width: '18rem'}}>
-    <Card.Body>
+    <Card style={{width: '25rem'}}>
+    <Card.Body className="p-3">
       <Card.Title>
         Part #212
       </Card.Title>
@@ -38,7 +38,9 @@ const PartInfo = () => {
           </tbody>
         </Table>
       </Card.Text>
-      <Card.Img variant="bottom" src="https://pixnio.com/free-images/2018/11/27/2018-11-27-15-42-14-1200x786.jpg" />
+      <div className="text-center">
+        <Card.Img variant="bottom" src="https://pixnio.com/free-images/2018/11/27/2018-11-27-15-42-14-1200x786.jpg" />
+      </div>
     </Card.Body>
   </Card>
   );

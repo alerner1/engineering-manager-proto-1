@@ -1,13 +1,14 @@
 import React from 'react';
 import PartInfo from '../Components/PartInfo';
 import DesignReviewProcess from '../Components/DesignReviewProcess';
+import RiskAlerts from '../Components/RiskAlerts';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const Screen3Container = () => {
   return(
-    <Container className="my-5">
+    <Container className="my-3">
       <Row>
         <Col>
           <PartInfo />
@@ -19,6 +20,7 @@ const Screen3Container = () => {
       <hr />
       <Row>
         <Col>
+          <RiskAlerts />
         </Col>
         <Col>
         </Col>
