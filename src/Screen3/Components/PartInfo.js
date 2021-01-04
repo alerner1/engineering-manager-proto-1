@@ -12,26 +12,26 @@ const PartInfo = () => {
         <Table>
           <tbody>
             <tr>
-              <th>
+              <th className="font-small small-padding">
                 Part name
               </th>
-              <td>
+              <td className="font-small small-padding">
                 Engine
               </td>
             </tr>
             <tr>
-              <th>
+              <th className="font-small small-padding">
                 Design owner
               </th>
-              <td>
+              <td className="font-small small-padding">
                 Xaviar J.
               </td>
             </tr>
             <tr>
-              <th>
+              <th className="font-small small-padding">
                 Part criticality
               </th>
-              <td>
+              <td className="font-small small-padding">
                 High
               </td>
             </tr>
