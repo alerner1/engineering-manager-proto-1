@@ -14,15 +14,61 @@ const DesignReviewChart = () => {
     <div ref={elementRef}>
 
     <VictoryChart 
-      
       horizontal 
-      maxDomain={{ x: 3.5, y: 130 }} 
+      maxDomain={{ x: 3.5, y: 120 }} 
       minDomain={{ x: 1.5, y: 0 }}
       height={width/3}
       width={width}
       >
       <VictoryStack>
-        <VictoryBar />
+        <VictoryBar 
+        data={[{ x: 3, y: 58 }]}
+        style={{
+          data: {fill: 'deepskyblue', width: 15}
+        }}
+        />
+        <VictoryBar 
+        data={[{ x: 3, y: 22}]}
+        style={{
+          data: {fill: 'transparent', width: 15}
+        }}
+        />
+        <VictoryBar 
+        data={[{ x: 3, y: 20}]}
+        style={{
+          data: {fill: 'deepskyblue', width: 15}
+        }}
+        />
+        <VictoryBar 
+        data={[{ x: 3, y: 6}]}
+        style={{
+          data: {fill: 'transparent', width: 15}
+        }}
+        />
+        <VictoryBar 
+        data={[{ x: 3, y: 2}]}
+        style={{
+          data: {fill: 'deepskyblue', width: 15}
+        }}
+        />
+        <VictoryBar 
+        data={[{ x: 3, y: 6}]}
+        style={{
+          data: {fill: 'transparent', width: 15}
+        }}
+        />
+        <VictoryBar 
+        data={[{ x: 3, y: 2}]}
+        style={{
+          data: {fill: 'deepskyblue', width: 15}
+        }}
+        />
+        <VictoryBar 
+        data={[{ x: 3, y: 4}]}
+        style={{
+          data: {fill: 'transparent', width: 15}
+        }}
+        />
       </VictoryStack>
       <VictoryStack>
 
