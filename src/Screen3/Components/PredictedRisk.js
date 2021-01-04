@@ -1,6 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import Table from 'react-bootstrap/Table';
 import ProgressBar from 'react-bootstrap/ProgressBar';
+import RiskBar from './RiskBar';
 
 const PredictedRisk = () => {
   return(
@@ -17,7 +18,7 @@ const PredictedRisk = () => {
                   Design error
                 </th>
                 <td style={{ border: 'none' }} className="font-small small-padding">
-                  <ProgressBar now={80} />
+                  <RiskBar dataPoint={80} />
                 </td>
               </tr>
               <tr>
@@ -25,7 +26,7 @@ const PredictedRisk = () => {
                   Other avoidable revision
                 </th>
                 <td className="font-small small-padding">
-                  <ProgressBar now={20} />
+                  <RiskBar dataPoint={20} />
                 </td>
               </tr>
               <tr>
@@ -33,7 +34,7 @@ const PredictedRisk = () => {
                   Delayed design completion
                 </th>
                 <td className="font-small small-padding">
-                  <ProgressBar now={5} />
+                  <RiskBar dataPoint={5} />
                 </td>
               </tr>
             </tbody>
