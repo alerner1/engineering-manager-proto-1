@@ -13,6 +13,10 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
   const [kpiDisplay, setKpiDisplay] = useState(false);
   const [subdivisionDisplay, setSubdivisionDisplay] = useState(false);
 
+  useEffect(() => {
+    console.log(kpiDisplay)
+  }, [kpiDisplay])
+
   // can animate these toggles with bootstrap collapse eventually
   const toggleKPIs = () => {
     setKpiDisplay(!kpiDisplay);
@@ -54,7 +58,7 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
       "% Rushed design": 0,
       "Digital design": 0,
       "SME Involvement": 0,
-      "Forecasted Risk": 0
+      "Predicted Design Errors": 0
     };
     const allRows = data.filter(row => {return row["Division"] === division})
 
@@ -93,9 +97,9 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
 
       return <tr key={uuidv4()}>
 
-        {flag ? <td>{row["Division"]}</td> : <td style={{ border: 'none' }}></td>}
+        {flag ? <td className="font-small">{row["Division"]}</td> : <td className="font-small" style={{ border: 'none' }}></td>}
 
-        <td onClick={event => redirectScreen2(event.target.innerText)} className={`hover-hand ${subdivisionDisplay ? "toggle-display in" : "toggle-display"}`}>
+        <td onClick={event => redirectScreen2(event.target.innerText)} className={`hover-hand font-small ${subdivisionDisplay ? "toggle-display in" : "toggle-display"}`}>
           {row["Subdivision"]}
         </td>
         <td>
@@ -116,44 +120,10 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
         </td>
         <td className={kpiDisplay ? "toggle-display in" : "toggle-display"} ></td>
         <td>
-          {forecastRisk(row["Forecasted Risk"])}
+          {row["Predicted Design Errors"]}
         </td>
       </tr>
     })
-  }
-
-  const forecastRisk = (dataPoint) => {
-    let color = "green";
-    if (dataPoint === 2) {
-      color = "#E0BA3E";
-    } else if (dataPoint === 3) {
-      color = "red";
-    }
-
-    const formattedData = [{ x: 0, y: 100 }]
-
-    return <VictoryChart maxDomain={{ y: 100 }} horizontal height={10} width={100} padding={{ top: 10, bottom: 10 }}>
-      <VictoryBar
-        style={{ data: { fill: color, width: 20 }, labels: { fill: "transparent" } }}
-        data={formattedData}
-        labels={({ datum }) => (`${datum.y}`)}
-      />
-      <VictoryAxis
-        style={{
-          axis: { stroke: "transparent" },
-          ticks: { stroke: "transparent" },
-          tickLabels: { fill: "transparent" }
-        }}
-      />
-      <VictoryAxis
-        dependentAxis
-        style={{
-          axis: { stroke: "transparent" },
-          tick: { stroke: "transparent" },
-          tickLabels: { fill: "transparent" }
-        }}
-      />
-    </VictoryChart>
   }
 
   const checkIfDisplayed = (column) => {
@@ -230,35 +200,35 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
         <tr>
           <th style={{ width: '12%' }}>
             {/* hover/click thing is a little messed up, try to fix */}
-          <div className="hover-hand" onClick={() => toggleSubdivisions()}>
+          <div className="hover-hand font-medium" onClick={() => toggleSubdivisions()}>
             Division &nbsp;
             {subdivisionDisplay ? <FontAwesomeIcon className="hover-hand" icon="minus-circle" /> : <FontAwesomeIcon className="hover-hand" icon="plus-circle" />}
             </div>
           </th>
-          <th className={subdivisionDisplay ? "toggle-display in" : "toggle-display"}>
+          <th className={`font-medium ${subdivisionDisplay ? "toggle-display in" : "toggle-display"}`}>
             Subdivision
           </th>
-          <th style={{ width: "50%" }}>
+          <th className="font-medium" style={{ width: "50%" }}>
             {percentageMetric}
           </th>
-          <th style={{ width: "15%" }} className={kpiDisplay ? "toggle-display" : "toggle-display in"}>
-            <Button style={{color: "midnightblue", backgroundColor: "transparent", border: "2px solid lightgray"}} className={kpiDisplay ? "toggle-display" : "toggle-display in"} onClick={toggleKPIs}>Display design performance KPIs <FontAwesomeIcon icon="plus-circle" /></Button>
+          <th style={{ width: "15%" }} className={`font-medium ${kpiDisplay ? "toggle-display" : "toggle-display in"}`}>
+            <Button style={{color: "midnightblue", backgroundColor: "transparent", border: "2px solid lightgray"}} className={`p-1 font-small ${kpiDisplay ? "toggle-display" : "toggle-display in"}`} onClick={toggleKPIs}>Display design performance KPIs <FontAwesomeIcon icon="plus-circle" /></Button>
           </th>
-          <th className={checkIfDisplayed('Iterations per design')}>
+          <th className={`font-medium ${checkIfDisplayed('Iterations per design')}`}>
             Iterations per design
           </th>
-          <th className={checkIfDisplayed('% Rushed design')}>
+          <th className={`font-medium ${checkIfDisplayed('% Rushed design')}`}>
             Rushed design
           </th>
-          <th className={checkIfDisplayed('Design digitization')}>
+          <th className={`font-medium ${checkIfDisplayed('Design digitization')}`}>
             Design digitization
           </th>
-          <th className={checkIfDisplayed('SME involvement')}>
+          <th className={`font-medium ${checkIfDisplayed('SME involvement')}`}>
             SME involvement 
           </th>
-          <th className={kpiDisplay ? "toggle-display in" : "toggle-display"}><FontAwesomeIcon className="hover-hand" onClick={() => toggleKPIs()} icon="minus-circle" /></th>
-          <th style={{ width: "7%" }}>
-            Forecasted risk
+          <th className={`font-medium ${kpiDisplay ? "toggle-display in" : "toggle-display"}`}><FontAwesomeIcon className="hover-hand" onClick={() => toggleKPIs()} icon="minus-circle" /></th>
+          <th className="font-medium" style={{ width: "7%" }}>
+            Predicted Design Errors
           </th>
         </tr>
       </thead>
