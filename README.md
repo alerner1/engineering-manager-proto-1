@@ -3,6 +3,7 @@
 OVERALL
 
 -- fix red/yellow/green color palette
+-- try to include ellipses...
 
 SIDEBAR
 
@@ -12,10 +13,10 @@ SIDEBAR
 
 SCREEN 1
 
--- fix formatting so all 10 divisions show at once
--- design errors should be first of radio buttons
--- change text from forecasted risk to design errors
--- make random number from 1-30 for forecasted risk
+4 -- fix formatting so all 10 divisions show at once
+DONE -- design errors should be first of radio buttons
+2 -- change text from forecasted risk to design errors
+3 -- make random number from 1-30 for forecasted risk
 
 SCREEN 2
 
