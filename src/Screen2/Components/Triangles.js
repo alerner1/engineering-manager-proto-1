@@ -31,13 +31,14 @@ const Triangles = ({row}) => {
     }
   };
 
-  const triangleWidth = window.innerWidth/10
+  const triangleWidth = width/2
+  const rectWidth = width
 
   return(
-    <Stage ref={elementRef} width={width} height={40}>
+    <Stage ref={elementRef} width={rectWidth} height={40}>
       <Layer>
-        <Line closed points={[(width - triangleWidth)/2 + 2, 0, (width - triangleWidth)/2 + triangleWidth, 0, (width - triangleWidth)/2 + triangleWidth, 40]} fill={getColor(row["% Schedule delays"])} stroke={getStrokeColor()} strokeWidth={2} />
-        <Line closed points={[(width - triangleWidth)/2, 0, (width - triangleWidth)/2, 40, (width - triangleWidth)/2 + triangleWidth, 40]} fill={getColor(row["% Design Errors"])} stroke={getStrokeColor()} strokeWidth={2} />
+        <Line closed points={[5, 2, triangleWidth + 2, 2, triangleWidth + 2, 38]} fill={getColor(row["% Schedule delays"])} stroke={getStrokeColor()} strokeWidth={2} />
+        <Line closed points={[2, 2, 2, 38, triangleWidth - 2, 38]} fill={getColor(row["% Design Errors"])} stroke={getStrokeColor()} strokeWidth={2} />
       </Layer>
     </Stage>
   );

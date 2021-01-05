@@ -34,7 +34,7 @@ export default DropdownsContainer2;
 
 const dropdownsList = [
   {
-    title: "Display Product?",
+    title: "Select Product?",
     options: [
       "(All)",
       "Product 1",

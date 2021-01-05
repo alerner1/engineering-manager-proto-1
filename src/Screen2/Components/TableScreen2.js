@@ -33,19 +33,19 @@ const TableScreen2 = ({ productFilter, data, percentageMetric }) => {
         <th>
           
         </th>
-        <th>
+        <th style={{width: '17%'}}>
           Body design
         </th>
-        <th>
+        <th style={{width: '17%'}}>
           Electronic systems
         </th>
-        <th>
+        <th style={{width: '17%'}}>
           Interior design
         </th>
-        <th>
+        <th style={{width: '17%'}}>
           Production engineering
         </th>
-        <th>
+        <th style={{width: '17%'}}>
           Vehicle performance development
         </th>
       </thead>
