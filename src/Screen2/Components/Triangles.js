@@ -12,11 +12,11 @@ const Triangles = ({row}) => {
 
   const getColor = (value) => {
     if (value > 67) {
-      return 'red';
+      return '#DF2935';
     } else if (value > 33) {
-      return '#E0BA3E';
+      return '#EFEA5A';
     } else {
-      return 'green';
+      return '#0DAB76';
     }
   };
 
@@ -24,10 +24,10 @@ const Triangles = ({row}) => {
     const topColor = getColor(row["% Schedule delays"]);
     const bottomColor = getColor(row["% Design Errors"]);
 
-    if (topColor === 'red' && bottomColor === 'red' || topColor === 'red' && bottomColor === '#E0BA3E' || topColor === '#E0BA3E' && bottomColor === 'red') {
-      return 'darkred';
+    if (topColor === '#DF2935' && bottomColor === '#DF2935' || topColor === '#DF2935' && bottomColor === '#EFEA5A' || topColor === '#EFEA5A' && bottomColor === '#DF2935') {
+      return '#A01821';
     } else {
-      return 'black';
+      return 'lightgray';
     }
   };
 

@@ -2,7 +2,7 @@
 
 OVERALL
 
--- fix red/yellow/green color palette
+DONE fix red/yellow/green color palette
 -- try to include ellipses...
 
 SIDEBAR

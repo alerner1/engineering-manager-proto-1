@@ -74,82 +74,82 @@ const DesignReviewChart = () => {
       </VictoryStack>
       <VictoryScatter 
         data={[{ x: 2, y: 60 }]}
-        style={{ data: { fill: "green", stroke: "lightgray", strokeWidth: 1 } }}
+        style={{ data: { fill: "#0DAB76", stroke: "lightgray", strokeWidth: 1 } }}
         size={width/70}
       />
       <VictoryScatter 
         data={[{ x: 2, y: 65 }]}
-        style={{ data: { fill: "green", stroke: "lightgray", strokeWidth: 1 } }}
+        style={{ data: { fill: "#0DAB76", stroke: "lightgray", strokeWidth: 1 } }}
         size={width/70}
       />
       <VictoryScatter 
         data={[{ x: 2, y: 70 }]}
-        style={{ data: { fill: "#E0BA3E", stroke: "lightgray", strokeWidth: 1 } }}
+        style={{ data: { fill: "#EFEA5A", stroke: "lightgray", strokeWidth: 1 } }}
         size={width/70}
       />
       <VictoryScatter 
         data={[{ x: 2, y: 75 }]}
-        style={{ data: { fill: "red", stroke: "lightgray", strokeWidth: 1 } }}
+        style={{ data: { fill: "#DF2935", stroke: "lightgray", strokeWidth: 1 } }}
         size={width/70}
       />
       <VictoryScatter 
         data={[{ x: 2, y: 96 }]}
-        style={{ data: { fill: "green", stroke: "lightgray", strokeWidth: 1 } }}
+        style={{ data: { fill: "#0DAB76", stroke: "lightgray", strokeWidth: 1 } }}
         size={width/70}
       />
       <VictoryScatter 
         data={[{ x: 2, y: 98 }]}
-        style={{ data: { fill: "green", stroke: "lightgray", strokeWidth: 1 } }}
+        style={{ data: { fill: "#0DAB76", stroke: "lightgray", strokeWidth: 1 } }}
         size={width/70}
       />
       <VictoryScatter 
         data={[{ x: 2, y: 100 }]}
-        style={{ data: { fill: "#E0BA3E", stroke: "lightgray", strokeWidth: 1 } }}
+        style={{ data: { fill: "#EFEA5A", stroke: "lightgray", strokeWidth: 1 } }}
         size={width/70}
       />
       <VictoryScatter 
         data={[{ x: 2, y: 101 }]}
-        style={{ data: { fill: "red", stroke: "lightgray", strokeWidth: 1 } }}
+        style={{ data: { fill: "#DF2935", stroke: "lightgray", strokeWidth: 1 } }}
         size={width/70}
       />
       <VictoryScatter 
         data={[{ x: 2, y: 106 }]}
-        style={{ data: { fill: "green", stroke: "lightgray", strokeWidth: 1 } }}
+        style={{ data: { fill: "#0DAB76", stroke: "lightgray", strokeWidth: 1 } }}
         size={width/70}
       />
       <VictoryScatter 
         data={[{ x: 2, y: 107 }]}
-        style={{ data: { fill: "green", stroke: "lightgray", strokeWidth: 1 } }}
+        style={{ data: { fill: "#0DAB76", stroke: "lightgray", strokeWidth: 1 } }}
         size={width/70}
       />
       <VictoryScatter 
         data={[{ x: 2, y: 108 }]}
-        style={{ data: { fill: "#E0BA3E", stroke: "lightgray", strokeWidth: 1 } }}
+        style={{ data: { fill: "#EFEA5A", stroke: "lightgray", strokeWidth: 1 } }}
         size={width/70}
       />
       <VictoryScatter 
         data={[{ x: 2, y: 109 }]}
-        style={{ data: { fill: "red", stroke: "lightgray", strokeWidth: 1 } }}
+        style={{ data: { fill: "#DF2935", stroke: "lightgray", strokeWidth: 1 } }}
         size={width/70}
       />
       <VictoryScatter 
         data={[{ x: 2, y: 114 }]}
-        style={{ data: { fill: "green", stroke: "lightgray", strokeWidth: 1 } }}
+        style={{ data: { fill: "#0DAB76", stroke: "lightgray", strokeWidth: 1 } }}
         size={width/70}
       />
       <VictoryScatter 
         data={[{ x: 2, y: 115 }]}
-        style={{ data: { fill: "green", stroke: "lightgray", strokeWidth: 1 } }}
+        style={{ data: { fill: "#0DAB76", stroke: "lightgray", strokeWidth: 1 } }}
         size={width/70}
       />
       <VictoryScatter 
         data={[{ x: 2, y: 116 }]}
-        style={{ data: { fill: "green", stroke: "lightgray", strokeWidth: 1 } }}
+        style={{ data: { fill: "#0DAB76", stroke: "lightgray", strokeWidth: 1 } }}
         size={width/70}
       />
       <VictoryScatter 
         data={[{ x: 2, y: 117 }]}
-        style={{ data: { fill: "green", stroke: "lightgray", strokeWidth: 1 } }}
+        style={{ data: { fill: "#0DAB76", stroke: "lightgray", strokeWidth: 1 } }}
         size={width/70}
       />
       <VictoryLine 

@@ -11,11 +11,11 @@ const PercentageMetricBar = ({ dataPoint }) => {
 
   const formattedData = [{ x: 0, y: dataPoint }];
 
-  let color = "green";
+  let color = "#0DAB76";
   if (dataPoint > 33 && dataPoint < 67) {
-    color = "#E0BA3E";
+    color = "#EFEA5A";
   } else if (dataPoint > 67) {
-    color = "red";
+    color = "#DF2935";
   }
 
   return (
