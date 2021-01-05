@@ -4,6 +4,7 @@ import { Stage, Layer, Line } from 'react-konva';
 import Table from 'react-bootstrap/Table';
 import { v4 as uuidv4 } from 'uuid';
 import Triangles from './Triangles';
+import EllipsePoint from '../../Screen3/Components/EllipsePoint';
 
 const TableScreen2 = ({ productFilter, data, percentageMetric }) => {
     
