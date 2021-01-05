@@ -1,3 +1,4 @@
+
 body {
   background-color: white;
   color: deepskyblue !important;
@@ -17,30 +18,38 @@ table {
 }
 
 // .with-chart {
-//   padding: 1 !important;
-// }
+  //   padding: 1 !important;
+  // }
+  
+  svg {
+    overflow: visible !important;
+  }
+  
+  .toggle-display {
+    display: none;
+  }
+  
+  .toggle-display.in {
+    display: table-cell;
+  }
+  
+  .hover-hand {
+    cursor: pointer;
+  }
+  
+  .small-padding {
+    padding: 3px !important;
+  }
+  
+  .font-small {
+    font-size: 0.8rem !important;
+  }
+  
+  $sidebar-collapsed-width: 0px;
+  $sidebar-bg-color: whitesmoke;
+  $sidebar-color: midnightblue;
+  $highlight-color: deepskyblue;
+  $submenu-bg-color: whitesmoke;
+  $submenu-bg-color-collapsed: whitesmoke;
 
-svg {
-  overflow: visible !important;
-}
-
-.toggle-display {
-  display: none;
-}
-
-.toggle-display.in {
-  display: table-cell;
-}
-
-.hover-hand {
-  cursor: pointer;
-}
-
-.small-padding {
-  padding: 3px !important;
-}
-
-.font-small {
-  font-size: 0.8rem !important;
-}
-
+  @import '~react-pro-sidebar/dist/scss/styles.scss';
