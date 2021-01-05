@@ -57,8 +57,8 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
       "% Cost overrun": 0,
       "Iterations per design": 0,
       "% Rushed design": 0,
-      "Digital design": 0,
-      "SME Involvement": 0,
+      "Design digitization": 0,
+      "SME involvement": 0,
       "Predicted Design Errors": 0
     };
     const allRows = data.filter(row => {return row["Division"] === division})
@@ -113,11 +113,11 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
         <td className={`small-padding text-center ${checkIfDisplayed('% Rushed design')}`}>
           {row["% Rushed design"]}
         </td>
-        <td className={`small-padding text-center ${checkIfDisplayed('Digital design')}`}>
-          {row["Digital design"]}
+        <td className={`small-padding text-center ${checkIfDisplayed('Design digitization')}`}>
+          {row["Design digitization"]}
         </td>
-        <td className={`small-padding text-center ${checkIfDisplayed('SME Involvment')}`}>
-          {row["SME Involvement"]}
+        <td className={`small-padding text-center ${checkIfDisplayed('SME involvement')}`}>
+          {row["SME involvement"]}
         </td>
         <td className={kpiDisplay ? "toggle-display in" : "toggle-display"} ></td>
         <td className="small-padding text-center">
@@ -148,35 +148,35 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
       {/* this is also a mess, try to fix */}
       <thead>
         <tr>
-          <th style={{ width: '12%' }}>
+          <th style={{ width: '12%' }} className="small-padding">
             <div className="hover-hand font-small" onClick={() => toggleSubdivisions()}>
               Division &nbsp;
               {subdivisionDisplay ? <FontAwesomeIcon className="hover-hand" icon="minus-circle" /> : <FontAwesomeIcon className="hover-hand" icon="plus-circle" />}
             </div>
           </th>
-          <th className={`font-small ${subdivisionDisplay ? "toggle-display in" : "toggle-display"}`}>
+          <th className={`font-small small-padding ${subdivisionDisplay ? "toggle-display in" : "toggle-display"}`}>
             Subdivision
           </th>
-          <th className="font-small" style={{ width: "50%" }}>
+          <th className="font-small small-padding" style={{ width: "50%" }}>
             {percentageMetric}
           </th>
-          <th style={{ width: "15%" }} className={`font-small ${kpiDisplay ? "toggle-display" : "toggle-display in"}`}>
+          <th style={{ width: "15%" }} className={`font-small small-padding ${kpiDisplay ? "toggle-display" : "toggle-display in"}`}>
             <Button style={{color: "midnightblue", backgroundColor: "transparent", border: "2px solid lightgray"}} className={`p-1 font-small ${kpiDisplay ? "toggle-display" : "toggle-display in"}`} onClick={toggleKPIs}>Display design performance KPIs <FontAwesomeIcon icon="plus-circle" /></Button>
           </th>
-          <th className={`font-small ${checkIfDisplayed('Iterations per design')}`}>
+          <th className={`font-small small-padding ${checkIfDisplayed('Iterations per design')}`}>
             Iterations per design
           </th>
-          <th className={`font-small ${checkIfDisplayed('% Rushed design')}`}>
+          <th className={`font-small small-padding ${checkIfDisplayed('% Rushed design')}`}>
             Rushed design
           </th>
-          <th className={`font-small ${checkIfDisplayed('Design digitization')}`}>
+          <th className={`font-small small-padding ${checkIfDisplayed('Design digitization')}`}>
             Design digitization
           </th>
-          <th className={`font-small ${checkIfDisplayed('SME involvement')}`}>
+          <th className={`font-small small-padding ${checkIfDisplayed('SME involvement')}`}>
             SME involvement 
           </th>
-          <th className={`font-small ${kpiDisplay ? "toggle-display in" : "toggle-display"}`}><FontAwesomeIcon className="hover-hand" onClick={() => toggleKPIs()} icon="minus-circle" /></th>
-          <th className="font-small" style={{ width: "7%" }}>
+          <th className={`font-small small-padding ${kpiDisplay ? "toggle-display in" : "toggle-display"}`}><FontAwesomeIcon className="hover-hand" onClick={() => toggleKPIs()} icon="minus-circle" /></th>
+          <th className="font-small small-padding" style={{ width: "7%" }}>
             Predicted Design Errors
           </th>
         </tr>

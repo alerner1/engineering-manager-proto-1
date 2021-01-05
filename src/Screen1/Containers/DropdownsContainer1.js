@@ -51,8 +51,8 @@ const dropdownsList = [
       "(All)",
       "Iterations per design",
       "% Rushed design",
-      "Digital design",
-      "SME Involvement"
+      "Design digitization",
+      "SME involvement"
     ]
   },
   {
