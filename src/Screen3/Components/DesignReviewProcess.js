@@ -13,26 +13,6 @@ const DesignReviewProcess = () => {
         </Card.Title>
         <Card.Text>
           <DesignReviewChart />
-          {/* <Table>
-            <tbody>
-              <tr>
-                <th style={{ border: 'none' }} className="font-small small-padding">
-                  Design
-                </th>
-                <td style={{ border: 'none' }} className="font-small small-padding">
-                  <ProgressBar now={50} />
-                </td>
-              </tr>
-              <tr>
-                <th className="font-small small-padding">
-                  Review
-                </th>
-                <td className="font-small small-padding">
-                  <ProgressBar now={75} />
-                </td>
-              </tr>
-            </tbody>
-          </Table> */}
           <Card.Title>
               Review comment excerpts
           </Card.Title>

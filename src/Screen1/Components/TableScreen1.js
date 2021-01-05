@@ -6,6 +6,7 @@ import { VictoryChart, VictoryAxis, VictoryBar, VictoryLabel, VictoryStack } fro
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useHistory } from 'react-router-dom';
+import PercentageMetricBar from './PercentageMetricBar';
 
 const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
   const history = useHistory();
@@ -103,7 +104,7 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
           {row["Subdivision"]}
         </td>
         <td className="small-padding">
-          {createBar(row[percentageMetric])}
+          {<PercentageMetricBar dataPoint={row[percentageMetric]} />}
         </td>
         <td className={`small-padding ${kpiDisplay ? "toggle-display" : "toggle-display in"}`} style={{ border: 'none' }}></td>
         <td className={`small-padding text-center ${checkIfDisplayed('Iterations per design')}`}>
@@ -141,57 +142,6 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
     }
   }
 
-  const createBar = (dataPoint) => {
-    const formattedData = [{ x: 0, y: dataPoint }];
-
-    let color = "green";
-    if (dataPoint > 33 && dataPoint < 67) {
-      color = "#E0BA3E";
-    } else if (dataPoint > 67) {
-      color = "red";
-    }
-
-    return (
-
-      <VictoryChart maxDomain={{ y: 100 }} horizontal height={10} width={100} padding={{ top: 2, bottom: 8 }}>
-        <VictoryStack
-          style={{ labels: { fill: "midnightblue", fontSize: 4 } }}
-        >
-          <VictoryBar
-            cornerRadius={{ bottomLeft: 2, bottomRight: 2 }}
-            style={{ data: { fill: color, width: 4, stroke: "lightgray", strokeWidth: 0.5 } }}
-            data={formattedData}
-            labels={() => (`${dataPoint}%`)}
-            labelComponent={
-              <VictoryLabel x={dataPoint} dx={dataPoint * 0.01} textAnchor="middle" verticalAnchor="middle" />
-            }
-          />
-          <VictoryBar
-            cornerRadius={2}
-            style={{ data: { fill: "white", width: 4, stroke: "lightgray", strokeWidth: 0.5 } }}
-            data={[{ x: 0, y: 100 - dataPoint }]}
-          />
-        </VictoryStack>
-        <VictoryAxis
-          style={{
-            axis: { stroke: "transparent" },
-            ticks: { stroke: "transparent" },
-            tickLabels: { fill: "transparent" }
-          }}
-          tickValues={[0]}
-          tickCount={1}
-        />
-        <VictoryAxis
-          dependentAxis
-          style={{
-            axis: { stroke: "transparent" },
-            tick: { stroke: "transparent" },
-            tickLabels: { fill: "transparent" }
-          }}
-        />
-      </VictoryChart>
-    );
-  }
 
   return (
     <Table>
