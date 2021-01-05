@@ -62,4 +62,9 @@ table {
   $submenu-bg-color: whitesmoke;
   $submenu-bg-color-collapsed: whitesmoke;
 
+  .pro-sidebar {
+    position: sticky;
+    top: 0;
+  }
+
   @import '~react-pro-sidebar/dist/scss/styles.scss';

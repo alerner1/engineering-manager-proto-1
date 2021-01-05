@@ -21,35 +21,40 @@ const App = () => {
   }
 
   return (
-      <div className="d-flex" style={{height: '100vh'}}>
-      <ProSidebar className="h-100 d-inline-block" collapsed={!showSidebar}>
-        <Button onClick={() => toggleSidebar()}>toggle</Button>
-        <Menu iconShape="square">
-          <SubMenu title="Analytics">
-            <MenuItem>Dashboards & KPIs</MenuItem>
-            <MenuItem>Trends & performance tracking</MenuItem>
-            <MenuItem>Drivers of errors & process recommendations</MenuItem>
-            <MenuItem>Upcoming critical tasks</MenuItem>
-            <MenuItem>Predictions</MenuItem>
-          </SubMenu>
-          <SubMenu title="Automation">
-            <MenuItem>Alerts</MenuItem>
-            <MenuItem>Workflows</MenuItem>
-          </SubMenu>
-          <SubMenu title="Customize">
-            <MenuItem>Application settings</MenuItem>
-            <MenuItem>Users & accounts</MenuItem>
-            <MenuItem>Analytics</MenuItem>
-            <MenuItem>Automation</MenuItem>
-          </SubMenu>
-        </Menu>
-      </ProSidebar>
-      
-      <Switch>
-        <Route path="/subdivisions/:name" children={<Screen2Container />} />
-        <Route path="/parts" children={<Screen3Container />} />
-        <Route path="/" render={() => <Screen1Container />} />
-      </Switch>
+      <div className="d-flex">
+        <div >
+          <div className="sticky-top" style={{height: '100vh'}}>
+            <ProSidebar collapsed={!showSidebar}>
+              <Button onClick={() => toggleSidebar()}>toggle</Button>
+              <Menu iconShape="square">
+                <SubMenu title="Analytics">
+                  <MenuItem>Dashboards & KPIs</MenuItem>
+                  <MenuItem>Trends & performance tracking</MenuItem>
+                  <MenuItem>Drivers of errors & process recommendations</MenuItem>
+                  <MenuItem>Upcoming critical tasks</MenuItem>
+                  <MenuItem>Predictions</MenuItem>
+                </SubMenu>
+                <SubMenu title="Automation">
+                  <MenuItem>Alerts</MenuItem>
+                  <MenuItem>Workflows</MenuItem>
+                </SubMenu>
+                <SubMenu title="Customize">
+                  <MenuItem>Application settings</MenuItem>
+                  <MenuItem>Users & accounts</MenuItem>
+                  <MenuItem>Analytics</MenuItem>
+                  <MenuItem>Automation</MenuItem>
+                </SubMenu>
+              </Menu>
+            </ProSidebar>
+          </div>
+        </div>
+        <div>
+          <Switch>
+            <Route path="/subdivisions/:name" children={<Screen2Container />} />
+            <Route path="/parts" children={<Screen3Container />} />
+            <Route path="/" render={() => <Screen1Container />} />
+          </Switch>
+        </div>
       </div>
   );
 }

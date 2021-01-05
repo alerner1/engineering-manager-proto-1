@@ -97,29 +97,29 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
 
       return <tr key={uuidv4()}>
 
-        {flag ? <td className="font-small">{row["Division"]}</td> : <td className="font-small" style={{ border: 'none' }}></td>}
+        {flag ? <td className="font-small small-padding ">{row["Division"]}</td> : <td className="font-small" style={{ border: 'none' }}></td>}
 
-        <td onClick={event => redirectScreen2(event.target.innerText)} className={`hover-hand font-small ${subdivisionDisplay ? "toggle-display in" : "toggle-display"}`}>
+        <td onClick={event => redirectScreen2(event.target.innerText)} className={`hover-hand font-small small-padding ${subdivisionDisplay ? "toggle-display in" : "toggle-display"}`}>
           {row["Subdivision"]}
         </td>
-        <td>
+        <td className="small-padding">
           {createBar(row[percentageMetric])}
         </td>
-        <td className={kpiDisplay ? "toggle-display" : "toggle-display in"} style={{ border: 'none' }}></td>
-        <td className={checkIfDisplayed('Iterations per design')}>
+        <td className={`small-padding ${kpiDisplay ? "toggle-display" : "toggle-display in"}`} style={{ border: 'none' }}></td>
+        <td className={`small-padding text-center ${checkIfDisplayed('Iterations per design')}`}>
           {row["Iterations per design"]}
         </td>
-        <td className={checkIfDisplayed('% Rushed design')}>
+        <td className={`small-padding text-center ${checkIfDisplayed('% Rushed design')}`}>
           {row["% Rushed design"]}
         </td>
-        <td className={checkIfDisplayed('Digital design')}>
+        <td className={`small-padding text-center ${checkIfDisplayed('Digital design')}`}>
           {row["Digital design"]}
         </td>
-        <td className={checkIfDisplayed('SME Involvment')}>
+        <td className={`small-padding text-center ${checkIfDisplayed('SME Involvment')}`}>
           {row["SME Involvement"]}
         </td>
         <td className={kpiDisplay ? "toggle-display in" : "toggle-display"} ></td>
-        <td>
+        <td className="small-padding text-center">
           {row["Predicted Design Errors"]}
         </td>
       </tr>
@@ -199,35 +199,34 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
       <thead>
         <tr>
           <th style={{ width: '12%' }}>
-            {/* hover/click thing is a little messed up, try to fix */}
-          <div className="hover-hand font-medium" onClick={() => toggleSubdivisions()}>
-            Division &nbsp;
-            {subdivisionDisplay ? <FontAwesomeIcon className="hover-hand" icon="minus-circle" /> : <FontAwesomeIcon className="hover-hand" icon="plus-circle" />}
+            <div className="hover-hand font-small" onClick={() => toggleSubdivisions()}>
+              Division &nbsp;
+              {subdivisionDisplay ? <FontAwesomeIcon className="hover-hand" icon="minus-circle" /> : <FontAwesomeIcon className="hover-hand" icon="plus-circle" />}
             </div>
           </th>
-          <th className={`font-medium ${subdivisionDisplay ? "toggle-display in" : "toggle-display"}`}>
+          <th className={`font-small ${subdivisionDisplay ? "toggle-display in" : "toggle-display"}`}>
             Subdivision
           </th>
-          <th className="font-medium" style={{ width: "50%" }}>
+          <th className="font-small" style={{ width: "50%" }}>
             {percentageMetric}
           </th>
-          <th style={{ width: "15%" }} className={`font-medium ${kpiDisplay ? "toggle-display" : "toggle-display in"}`}>
+          <th style={{ width: "15%" }} className={`font-small ${kpiDisplay ? "toggle-display" : "toggle-display in"}`}>
             <Button style={{color: "midnightblue", backgroundColor: "transparent", border: "2px solid lightgray"}} className={`p-1 font-small ${kpiDisplay ? "toggle-display" : "toggle-display in"}`} onClick={toggleKPIs}>Display design performance KPIs <FontAwesomeIcon icon="plus-circle" /></Button>
           </th>
-          <th className={`font-medium ${checkIfDisplayed('Iterations per design')}`}>
+          <th className={`font-small ${checkIfDisplayed('Iterations per design')}`}>
             Iterations per design
           </th>
-          <th className={`font-medium ${checkIfDisplayed('% Rushed design')}`}>
+          <th className={`font-small ${checkIfDisplayed('% Rushed design')}`}>
             Rushed design
           </th>
-          <th className={`font-medium ${checkIfDisplayed('Design digitization')}`}>
+          <th className={`font-small ${checkIfDisplayed('Design digitization')}`}>
             Design digitization
           </th>
-          <th className={`font-medium ${checkIfDisplayed('SME involvement')}`}>
+          <th className={`font-small ${checkIfDisplayed('SME involvement')}`}>
             SME involvement 
           </th>
-          <th className={`font-medium ${kpiDisplay ? "toggle-display in" : "toggle-display"}`}><FontAwesomeIcon className="hover-hand" onClick={() => toggleKPIs()} icon="minus-circle" /></th>
-          <th className="font-medium" style={{ width: "7%" }}>
+          <th className={`font-small ${kpiDisplay ? "toggle-display in" : "toggle-display"}`}><FontAwesomeIcon className="hover-hand" onClick={() => toggleKPIs()} icon="minus-circle" /></th>
+          <th className="font-small" style={{ width: "7%" }}>
             Predicted Design Errors
           </th>
         </tr>
