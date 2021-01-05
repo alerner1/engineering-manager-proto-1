@@ -28,7 +28,7 @@ const PercentageMetricBar = ({ dataPoint }) => {
         padding={{top: width/40, bottom: width/40, left: 0, right: 0}}
       >
         <VictoryStack
-          style={{ labels: { fill: "midnightblue", fontSize: 4 } }}
+          style={{ labels: { fill: "midnightblue", fontSize: width/30 } }}
         >
           <VictoryBar
             cornerRadius={{ bottomLeft: width/60, bottomRight: width/60 }}
@@ -36,7 +36,7 @@ const PercentageMetricBar = ({ dataPoint }) => {
             data={formattedData}
             labels={() => (`${dataPoint}%`)}
             labelComponent={
-              <VictoryLabel x={dataPoint} dx={dataPoint * 0.01} textAnchor="middle" verticalAnchor="middle" />
+              <VictoryLabel x={(dataPoint/100 * width)} dx={dataPoint * .05} textAnchor="middle" verticalAnchor="middle" />
             }
           />
           <VictoryBar
