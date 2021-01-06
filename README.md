@@ -8,8 +8,8 @@ DONE fix red/yellow/green color palette
 SIDEBAR
 
 DONE -- fix toggle button
--- add correct icons to each item
--- attach screens 1/2 to dashboards and kpis
+DONE (ish) -- add correct icons to each item
+DONE -- attach screens 1/2 to dashboards and kpis
 
 SCREEN 1
 
@@ -18,7 +18,7 @@ DONE -- design errors should be first of radio buttons
 DONE -- change text from forecasted risk to design errors
 DONE -- make random number from 1-30 for forecasted risk
 DONE -- fix division + and - button
--- make sure width of cells always adds up to 100
+DONE (?) make sure width of cells always adds up to 100
 
 SCREEN 2
 

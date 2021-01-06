@@ -154,28 +154,28 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
               {subdivisionDisplay ? <FontAwesomeIcon className="hover-hand" icon="minus-circle" /> : <FontAwesomeIcon className="hover-hand" icon="plus-circle" />}
             </div>
           </th>
-          <th className={`font-small small-padding ${subdivisionDisplay ? "toggle-display in" : "toggle-display"}`}>
+          <th style={{ width: '10%' }} className={`font-small small-padding ${subdivisionDisplay ? "toggle-display in" : "toggle-display"}`}>
             Subdivision
           </th>
-          <th className="font-small small-padding" style={{ width: "50%" }}>
+          <th className="font-small small-padding">
             {percentageMetric}
           </th>
           <th style={{ width: "15%" }} className={`font-small small-padding ${kpiDisplay ? "toggle-display" : "toggle-display in"}`}>
             <Button style={{color: "midnightblue", backgroundColor: "transparent", border: "2px solid lightgray"}} className={`p-1 font-small ${kpiDisplay ? "toggle-display" : "toggle-display in"}`} onClick={toggleKPIs}>Display design performance KPIs <FontAwesomeIcon icon="plus-circle" /></Button>
           </th>
-          <th className={`font-small small-padding ${checkIfDisplayed('Iterations per design')}`}>
+          <th style={{width: '7%'}} className={`font-small small-padding ${checkIfDisplayed('Iterations per design')}`}>
             Iterations per design
           </th>
-          <th className={`font-small small-padding ${checkIfDisplayed('% Rushed design')}`}>
+          <th style={{width: '7%'}} className={`font-small small-padding ${checkIfDisplayed('% Rushed design')}`}>
             Rushed design
           </th>
-          <th className={`font-small small-padding ${checkIfDisplayed('Design digitization')}`}>
+          <th style={{width: '7%'}} className={`font-small small-padding ${checkIfDisplayed('Design digitization')}`}>
             Design digitization
           </th>
-          <th className={`font-small small-padding ${checkIfDisplayed('SME involvement')}`}>
+          <th style={{width: '7%'}} className={`font-small small-padding ${checkIfDisplayed('SME involvement')}`}>
             SME involvement 
           </th>
-          <th className={`font-small small-padding ${kpiDisplay ? "toggle-display in" : "toggle-display"}`}><FontAwesomeIcon className="hover-hand" onClick={() => toggleKPIs()} icon="minus-circle" /></th>
+          <th style={{width: '2%'}} className={`font-small small-padding ${kpiDisplay ? "toggle-display in" : "toggle-display"}`}><FontAwesomeIcon className="hover-hand" onClick={() => toggleKPIs()} icon="minus-circle" /></th>
           <th className="font-small small-padding" style={{ width: "7%" }}>
             Predicted Design Errors
           </th>
