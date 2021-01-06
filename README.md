@@ -22,10 +22,10 @@ DONE -- fix division + and - button
 
 SCREEN 2
 
--- add legend to explain triangles
+DONE add legend to explain triangles
 DONE -- change display product to select product
 DONE -- fix formatting of triangles
--- match dropdown formatting to screen 1
+DONE match dropdown formatting to screen 1
 
 SCREEN 3
 

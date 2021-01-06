@@ -4,13 +4,14 @@ import Screen3Container from './Screen3/Containers/Screen3Container';
 import React, { useState, useEffect } from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faPlusCircle, faMinusCircle, faExclamationTriangle, faCircle } from '@fortawesome/free-solid-svg-icons';
+import { faPlusCircle, faMinusCircle, faExclamationTriangle, faCircle, faBars } from '@fortawesome/free-solid-svg-icons';
 import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-library.add(faPlusCircle, faMinusCircle, faExclamationTriangle)
+library.add(faPlusCircle, faMinusCircle, faExclamationTriangle, faCircle, faBars)
 
 const App = () => {
 
@@ -23,9 +24,11 @@ const App = () => {
   return (
       <div className="d-flex">
         <div >
-          <div className="sticky-top" style={{height: '100vh'}}>
+          <div className="sticky-top" style={{height: '100vh', backgroundColor: 'whitesmoke'}}>
+            <Button className="shadow-none button-transparent" onClick={() => toggleSidebar()}>
+              <FontAwesomeIcon style={{color: 'midnightblue'}} icon="bars" /> 
+            </Button>
             <ProSidebar collapsed={!showSidebar}>
-              <Button onClick={() => toggleSidebar()}>toggle</Button>
               <Menu iconShape="square">
                 <SubMenu title="Analytics">
                   <MenuItem>Dashboards & KPIs</MenuItem>

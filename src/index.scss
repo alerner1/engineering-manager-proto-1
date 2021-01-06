@@ -17,54 +17,52 @@ table {
   color: midnightblue !important;
 }
 
-// .with-chart {
-  //   padding: 1 !important;
-  // }
-  
-  // svg {
-  //   overflow: visible !important;
-  // }
-  
-  .toggle-display {
-    display: none;
-  }
-  
-  .toggle-display.in {
-    display: table-cell;
-  }
-  
-  .hover-hand {
-    cursor: pointer;
-  }
-  
-  .small-padding {
-    padding: 3px !important;
-  }
-  
-  .font-small {
-    font-size: 0.8rem !important;
-  }
+.button-transparent {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  box-shadow: transparent !important;
+}
 
-  .font-medium {
-    font-size: .9rem !important;
-  }
+.toggle-display {
+  display: none;
+}
 
-  .form-control-sm {
-    height: calc(1.75rem + 2px) !important;
-    font-size: 0.8rem !important;
-    padding: .25rem .25rem !important;
-  }
-  
-  $sidebar-collapsed-width: 0px;
-  $sidebar-bg-color: whitesmoke;
-  $sidebar-color: midnightblue;
-  $highlight-color: deepskyblue;
-  $submenu-bg-color: whitesmoke;
-  $submenu-bg-color-collapsed: whitesmoke;
+.toggle-display.in {
+  display: table-cell;
+}
 
-  .pro-sidebar {
-    position: sticky;
-    top: 0;
-  }
+.hover-hand {
+  cursor: pointer;
+}
 
-  @import '~react-pro-sidebar/dist/scss/styles.scss';
+.small-padding {
+  padding: 3px !important;
+}
+
+.font-small {
+  font-size: 0.8rem !important;
+}
+
+.font-medium {
+  font-size: .9rem !important;
+}
+
+.form-control-sm {
+  height: calc(1.75rem + 2px) !important;
+  font-size: 0.8rem !important;
+  padding: .25rem .25rem !important;
+}
+
+$sidebar-collapsed-width: 0px;
+$sidebar-bg-color: whitesmoke;
+$sidebar-color: midnightblue;
+$highlight-color: deepskyblue;
+$submenu-bg-color: whitesmoke;
+$submenu-bg-color-collapsed: whitesmoke;
+
+.pro-sidebar {
+  position: sticky;
+  top: 0;
+}
+
+@import '~react-pro-sidebar/dist/scss/styles.scss';
