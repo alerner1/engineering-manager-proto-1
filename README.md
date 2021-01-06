@@ -29,7 +29,7 @@ DONE -- match dropdown formatting to screen 1
 
 SCREEN 3
 
--- add legend to design/review chart
+DONE -- add legend to design/review chart
 
 SCREEN 4
 

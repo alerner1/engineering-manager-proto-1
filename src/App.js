@@ -4,21 +4,34 @@ import Screen3Container from './Screen3/Containers/Screen3Container';
 import React, { useState, useEffect } from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faPlusCircle, faMinusCircle, faExclamationTriangle, faCircle, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faPlusCircle, faMinusCircle, faExclamationTriangle, faCircle, faBars, faAtom, faLayerGroup } from '@fortawesome/free-solid-svg-icons';
 import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-library.add(faPlusCircle, faMinusCircle, faExclamationTriangle, faCircle, faBars)
+library.add(faPlusCircle, faMinusCircle, faExclamationTriangle, faCircle, faBars, faAtom, faLayerGroup)
 
 const App = () => {
 
   const [showSidebar, setShowSidebar] = useState(true);
 
+  let history = useHistory();
+
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar)
+  }
+
+  const handleNav = (id) => {
+    switch(id) {
+      case "dashboard":
+        history.push('/');
+        break;
+      default:
+        history.push('/');
+        break;
+    }
   }
 
   return (
@@ -29,19 +42,19 @@ const App = () => {
               <FontAwesomeIcon style={{color: 'midnightblue'}} icon="bars" /> 
             </Button>
             <ProSidebar collapsed={!showSidebar}>
-              <Menu iconShape="square">
-                <SubMenu title="Analytics">
-                  <MenuItem>Dashboards & KPIs</MenuItem>
-                  <MenuItem>Trends & performance tracking</MenuItem>
-                  <MenuItem>Drivers of errors & process recommendations</MenuItem>
+              <Menu>
+                <SubMenu title="Analytics" icon={<FontAwesomeIcon style={{color: 'midnightblue'}} icon="atom" />}>
+                  <MenuItem onClick={(event) => handleNav(event.target.id)} id="dashboard" >Dashboards & KPIs</MenuItem>
+                  <MenuItem>Trends & performance <br /> tracking</MenuItem>
+                  <MenuItem>Drivers of errors & <br /> process recommendations</MenuItem>
                   <MenuItem>Upcoming critical tasks</MenuItem>
                   <MenuItem>Predictions</MenuItem>
                 </SubMenu>
-                <SubMenu title="Automation">
+                <SubMenu title="Automation" icon={<FontAwesomeIcon style={{color: 'midnightblue'}} icon="atom" />}>
                   <MenuItem>Alerts</MenuItem>
                   <MenuItem>Workflows</MenuItem>
                 </SubMenu>
-                <SubMenu title="Customize">
+                <SubMenu title="Customize" icon={<FontAwesomeIcon style={{color: 'midnightblue'}} icon="atom" />}>
                   <MenuItem>Application settings</MenuItem>
                   <MenuItem>Users & accounts</MenuItem>
                   <MenuItem>Analytics</MenuItem>
