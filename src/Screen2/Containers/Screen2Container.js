@@ -23,10 +23,10 @@ const Screen2Container = () => {
 
   return(
     <>
-      <div className="p-3">
+      <div className="pt-2 px-3 d-block mx-auto w-100">
         <DropdownsContainer2 productFilter={productFilter} handleFilter={handleFilter} percentageMetric={percentageMetric} onPercentageMetricChange={onPercentageMetricChange}/>
       </div>
-      <div className="p-3">
+      <div className="pt-2 px-3 d-block mx-auto w-100">
         <TableContainer2 productFilter={productFilter} data={subData} percentageMetric={percentageMetric} />
       </div>
     </>

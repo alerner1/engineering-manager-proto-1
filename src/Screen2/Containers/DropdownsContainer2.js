@@ -4,6 +4,8 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import DisplayDropdown2 from '../Components/DisplayDropdown2';
 import {v4 as uuidv4} from 'uuid';
+import TopTriangleIcon from '../Components/TopTriangleIcon';
+import BottomTriangleIcon from '../Components/BottomTriangleIcon';
 
 const DropdownsContainer2 = ({ productFilter, handleFilter, percentageMetric, onPercentageMetricChange}) => {
   const mapDropdowns = () => {
@@ -13,18 +15,38 @@ const DropdownsContainer2 = ({ productFilter, handleFilter, percentageMetric, on
  
 
   return(
-    <Row>
+    <Row className="d-flex justify-content-between">
       {mapDropdowns()}
-      <Col xs={6}>
+      <Col xs={7}>
       </Col>
       <Col>
-        <Form onChange={event => onPercentageMetricChange(event.target.value)}>
-          <div key="default-radio" className="mb-3">
-            <Form.Check type="radio" checked={percentageMetric === "% Schedule delays"} id="schedule-delays" label="% Schedule delays" value="% Schedule delays" />
-            <Form.Check type="radio" checked={percentageMetric === "% Design Errors"} id="design-errors" label="% Design errors" value="% Design Errors" />
-            <Form.Check type="radio" checked={percentageMetric === "% Cost overrun"} id="cost-overrun" label="% Cost overrrun" value="% Cost overrun" />
-          </div>
-        </Form>
+        <Row>
+          <Col>
+            <Form onChange={event => onPercentageMetricChange(event.target.value)}>
+              <div key="default-radio" className="mb-3">
+                <Form.Check type="radio" checked={percentageMetric === "% Design Errors"} id="design-errors" label="% Design errors" value="% Design Errors" />
+                <Form.Check type="radio" checked={percentageMetric === "% Schedule delays"} id="schedule-delays" label="% Schedule delays" value="% Schedule delays" />
+                <Form.Check type="radio" checked={percentageMetric === "% Cost overrun"} id="cost-overrun" label="% Cost overrrun" value="% Cost overrun" />
+              </div>
+            </Form>
+          </Col>
+        </Row>
+        <Row noGutters className="m-0">
+          <Col xs={1}>
+            <TopTriangleIcon />
+          </Col>
+          <Col className="font-small">
+            &nbsp;&nbsp;&nbsp; Design errors
+          </Col>
+        </Row>
+        <Row noGutters className="m-0">
+        <Col xs={1}>
+            <BottomTriangleIcon />
+          </Col>
+          <Col className="font-small">
+            &nbsp;&nbsp;&nbsp; Schedule delays
+          </Col>
+        </Row>
       </Col>
     </Row>
   );
