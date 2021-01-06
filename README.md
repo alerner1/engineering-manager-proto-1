@@ -7,7 +7,7 @@ DONE fix red/yellow/green color palette
 
 SIDEBAR
 
--- fix toggle button
+DONE -- fix toggle button
 -- add correct icons to each item
 -- attach screens 1/2 to dashboards and kpis
 
@@ -22,10 +22,10 @@ DONE -- fix division + and - button
 
 SCREEN 2
 
-DONE add legend to explain triangles
+DONE -- add legend to explain triangles
 DONE -- change display product to select product
 DONE -- fix formatting of triangles
-DONE match dropdown formatting to screen 1
+DONE -- match dropdown formatting to screen 1
 
 SCREEN 3
 
