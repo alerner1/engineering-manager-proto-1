@@ -98,7 +98,7 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
 
       return <tr key={uuidv4()}>
 
-        {flag ? <td className="font-small small-padding ">{row["Division"]}</td> : <td className="font-small" style={{ border: 'none' }}></td>}
+        {flag ? <td className="division-cell font-small small-padding ">{row["Division"]}</td> : <td className="font-small" style={{ border: 'none' }}></td>}
 
         <td onClick={event => redirectScreen2(event.target.innerText)} className={`hover-hand font-small small-padding ${subdivisionDisplay ? "toggle-display in" : "toggle-display"}`}>
           {row["Subdivision"]}
@@ -154,7 +154,7 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
               {subdivisionDisplay ? <FontAwesomeIcon className="hover-hand" icon="minus-circle" /> : <FontAwesomeIcon className="hover-hand" icon="plus-circle" />}
             </div>
           </th>
-          <th style={{ width: '10%' }} className={`font-small small-padding ${subdivisionDisplay ? "toggle-display in" : "toggle-display"}`}>
+          <th style={{ width: '20%' }} className={`font-small small-padding ${subdivisionDisplay ? "toggle-display in" : "toggle-display"}`}>
             Subdivision
           </th>
           <th className="font-small small-padding">

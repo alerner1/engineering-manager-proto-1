@@ -16,13 +16,11 @@ const RiskBar = ({dataPoint}) => {
         style={{ labels: { fill: "midnightblue", fontSize: 4 } }}
       >
         <VictoryBar
-          cornerRadius={{ bottomLeft: 2, bottomRight: 2 }}
-          style={{ data: { fill: color, width: 4, stroke: "lightgray", strokeWidth: 0.5 } }}
+          style={{ data: { fill: color, width: 4 } }}
           data={formattedData}
         />
         <VictoryBar
-          cornerRadius={2}
-          style={{ data: { fill: "whitesmoke", width: 4, stroke: "lightgray", strokeWidth: 0.5 } }}
+          style={{ data: { fill: "whitesmoke", width: 4 } }}
           data={[{ x: 0, y: 100 - dataPoint }]}
         />
       </VictoryStack>
