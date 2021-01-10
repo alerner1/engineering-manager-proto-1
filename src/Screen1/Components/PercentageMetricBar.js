@@ -31,8 +31,7 @@ const PercentageMetricBar = ({ dataPoint }) => {
           style={{ labels: { fill: "midnightblue", fontSize: '.8rem' } }}
         >
           <VictoryBar
-            cornerRadius={{ bottomLeft: width/60, bottomRight: width/60 }}
-            style={{ data: { fill: color, width: width/20, stroke: "lightgray", strokeWidth: 0.5 } }}
+            style={{ data: { fill: color, width: width/40 } }}
             data={formattedData}
             labels={() => (`${dataPoint}%`)}
             labelComponent={
@@ -40,8 +39,7 @@ const PercentageMetricBar = ({ dataPoint }) => {
             }
           />
           <VictoryBar
-            cornerRadius={width/60}
-            style={{ data: { fill: "white", width: width/20, stroke: "lightgray", strokeWidth: 0.5 } }}
+            style={{ data: { fill: "whitesmoke", width: width/40 } }}
             data={[{ x: 0, y: 100 - dataPoint }]}
           />
         </VictoryStack>
