@@ -19,13 +19,13 @@ const DropdownsContainer1 = ({ kpiFilter, unitFilter, handleFilter, percentageMe
       <Col xs={3}>
       </Col>
       <Col>
-        <Form onChange={event => onPercentageMetricChange(event.target.value)}>
+        {/* <Form onChange={event => onPercentageMetricChange(event.target.value)}>
           <div key="default-radio" className="mb-3">
             <Form.Check className="font-small" type="radio" checked={percentageMetric === "% Design Errors"} id="design-errors" label="% Design errors" value="% Design Errors" />
             <Form.Check className="font-small" type="radio" checked={percentageMetric === "% Schedule delays"} id="schedule-delays" label="% Schedule delays" value="% Schedule delays" />
             <Form.Check className="font-small" type="radio" checked={percentageMetric === "% Cost overrun"} id="cost-overrun" label="% Cost overrrun" value="% Cost overrun" />
           </div>
-        </Form>
+        </Form> */}
       </Col>
     </Row>
   );
