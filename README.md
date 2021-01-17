@@ -1,36 +1,31 @@
-#TODOS
-
-OVERALL
-
-DONE fix red/yellow/green color palette
--- try to include ellipses...
-
-SIDEBAR
-
-DONE -- fix toggle button
-DONE (ish) -- add correct icons to each item
-DONE -- attach screens 1/2 to dashboards and kpis
-
-SCREEN 1
-
-DONE -- fix formatting so all 10 divisions show at once
-DONE -- design errors should be first of radio buttons
-DONE -- change text from forecasted risk to design errors
-DONE -- make random number from 1-30 for forecasted risk
-DONE -- fix division + and - button
-DONE (?) make sure width of cells always adds up to 100
-
-SCREEN 2
-
-DONE -- add legend to explain triangles
-DONE -- change display product to select product
-DONE -- fix formatting of triangles
-DONE -- match dropdown formatting to screen 1
-
-SCREEN 3
-
-DONE -- add legend to design/review chart
-
 SCREEN 4
 
 -- create it
+
+Design notes:
+
+-- remove radio button on top right in favor of focus on design errors
+
+--"predicted design errors" would bring you to screen 4
+  --shows list of design errors along with predicted risk broken up into high/medium/low risk
+  --if you click on a specific design error it brings you to stock part page
+
+--predicted design errors is three color barchart: yellow/orange/red. red=high, orange=medium, yellow=low (show in legend)
+
+--replace "upcoming critical tasks" and "predictions" with "predicted risk"
+
+--functionality to show how % of design errors changes over time for each program
+(or division I suppose?) (fig a)
+
+--driver analysis shows top correlates of design errors. some have dots that we have set up as deep dives (fig b)
+  
+  if you click on one:
+  --show a boxplot that shows how # of iterations varies with the likelihood of design error (fig c)
+  --show a scatterplot showing length of reviewer comments (as measured by the # of sheets) is linked to design errors (fig d)
+  --process recommendations: involving experts in thermal requirements too late in the design process is linked to errors (fig e)
+
+--automation doesn't go to anything right now but mouseover text (or tooltip, whatever) says "under construction"
+
+HEROKU
+
+[amplitude, jellyfish, engineering]
