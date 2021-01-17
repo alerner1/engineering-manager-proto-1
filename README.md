@@ -4,13 +4,15 @@ SCREEN 4
 
 Design notes:
 
--- remove radio button on top right in favor of focus on design errors
+DONE -- remove radio button on top right in favor of focus on design errors
 
 --"predicted design errors" would bring you to screen 4
   --shows list of design errors along with predicted risk broken up into high/medium/low risk
   --if you click on a specific design error it brings you to stock part page
 
 --predicted design errors is three color barchart: yellow/orange/red. red=high, orange=medium, yellow=low (show in legend)
+
+--We probably want to label the parts as high medium low severity as an additional column there)
 
 --replace "upcoming critical tasks" and "predictions" with "predicted risk"
 
