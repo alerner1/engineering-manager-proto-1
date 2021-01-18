@@ -31,3 +31,5 @@ DONE -- remove radio button on top right in favor of focus on design errors
 HEROKU
 
 [amplitude, jellyfish, engineering]
+
+--i'm still unclear on what the screen2 radio buttons do, will delete for now
