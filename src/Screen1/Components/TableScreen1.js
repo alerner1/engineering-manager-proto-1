@@ -82,6 +82,11 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
     history.push(`/subdivisions/${subdivisionName}`)
   }
 
+  const redirectScreen4 = (event, subdivisionName) => {
+    event.preventDefault();
+    history.push(`/design_errors/${subdivisionName}`)
+  }
+
   
   const mapRows = (rowData) => {
     if (unitFilter !== "(All)") {
@@ -121,7 +126,12 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
         </td>
         <td className={kpiDisplay ? "toggle-display in" : "toggle-display"} ></td>
         <td className="small-padding text-center">
-          {row["Predicted Design Errors"]}
+          {
+            subdivisionDisplay ? 
+            <a onClick={event => redirectScreen4(event, row["Subdivision"])} href="">{row["Predicted Design Errors"]}</a>
+            :
+            <a onClick={event => redirectScreen4(event, row["Division"])} href="">{row["Predicted Design Errors"]}</a>
+          }
         </td>
       </tr>
     })
