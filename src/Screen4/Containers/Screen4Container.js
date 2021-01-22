@@ -1,5 +1,6 @@
 import React from 'react';
 import DropdownsContainer4 from './DropdownsContainer4';
+import TableContainer4 from './TableContainer4';
 import Table from 'react-bootstrap/Table';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -14,7 +15,9 @@ const Screen4Container = () => {
         <div className="pt-2 px-3 d-block mx-auto w-100">
           <DropdownsContainer4 />
         </div>
-        hi
+        <div className="pt-2 px-3 d-block mx-auto w-100">
+          <TableContainer4 />
+        </div>
       </Col>
     </Row>
   )
@@ -31,3 +34,22 @@ export default Screen4Container;
 
 // table
 // part | risk alerts (#) | blockers (#? str?) | process deviations (#)
+
+// ok we can easily generate this data right?
+
+// when you click on a subdivision
+// show 50 parts. 
+// first 10 assigned to product line 1, next to product line 2, and so on
+// each with risk alerts and blockers and process devs set to a random number between 1 and 30. 
+
+// when you click on a division
+// show 150 parts (or # of subdivisions * 50)
+// 50 per subdivision
+
+
+// you know what's REALLY missing from this screen? you have no idea where you are.
+// you need to show which subdivision you're looking at or whatever.
+
+
+
+// anyway... for now. for tomorrow. all we need is one lousy screen to share. clicking doesn't even have to work.
