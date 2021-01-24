@@ -1,6 +1,5 @@
 import Card from 'react-bootstrap/Card';
 import Table from 'react-bootstrap/Table';
-import ProgressBar from 'react-bootstrap/ProgressBar';
 import RiskBar from './RiskBar';
 
 const PredictedRisk = () => {
