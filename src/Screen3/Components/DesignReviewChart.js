@@ -1,7 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { VictoryChart, VictoryLegend, VictoryScatter, VictoryLine, VictoryAxis, VictoryBar, VictoryStack, VictoryLabel } from 'victory';
-import { Stage, Layer, Ellipse } from 'react-konva';
-import EllipsePoint from './EllipsePoint';
+import { VictoryChart, VictoryScatter, VictoryLine, VictoryAxis, VictoryBar, VictoryStack, VictoryLabel } from 'victory';
 
 const DesignReviewChart = () => {
   const [width, setWidth] = useState(0);
