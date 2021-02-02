@@ -48,8 +48,7 @@ const App = () => {
                   <MenuItem onClick={(event) => handleNav(event.target.id)} id="dashboard" >Dashboards & KPIs</MenuItem>
                   <MenuItem>Trends & performance <br /> tracking</MenuItem>
                   <MenuItem>Drivers of errors & <br /> process recommendations</MenuItem>
-                  <MenuItem>Upcoming critical tasks</MenuItem>
-                  <MenuItem>Predictions</MenuItem>
+                  <MenuItem>Predicted Risk</MenuItem>
                 </SubMenu>
                 <SubMenu title="Automation" icon={<FontAwesomeIcon style={{color: 'midnightblue'}} icon="atom" />}>
                   <MenuItem>Alerts</MenuItem>

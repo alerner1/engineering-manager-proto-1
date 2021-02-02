@@ -11,7 +11,7 @@ Design notes:
 
 DONE -- remove radio button on top right in favor of focus on design errors
 
-DONE --"predicted design errors" would bring you to screen 4
+--"predicted design errors" would bring you to screen 4
   --shows list of design errors along with predicted risk broken up into high/medium/low risk
   --if you click on a specific design error it brings you to stock part page
 
@@ -19,7 +19,7 @@ DONE --"predicted design errors" would bring you to screen 4
 
 --We probably want to label the parts as high medium low severity as an additional column there)
 
---replace "upcoming critical tasks" and "predictions" with "predicted risk"
+DONE --replace "upcoming critical tasks" and "predictions" with "predicted risk"
 
 --functionality to show how % of design errors changes over time for each program
 (or division I suppose?) (fig a)
