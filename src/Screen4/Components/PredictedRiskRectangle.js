@@ -23,8 +23,7 @@ const PredictedRiskRectangle = ({risk}) => {
   };
 
 
-  const rectWidth = width;
-  console.log(width)
+  const rectWidth = width/2;
 
   return(
     <Stage ref={elementRef} width={rectWidth} height={40}>
@@ -32,7 +31,7 @@ const PredictedRiskRectangle = ({risk}) => {
         <Rect 
           x={0}
           y={10}
-          width={rectWidth/4}
+          width={rectWidth/2}
           height={20}
           fill={getColor()}
         />
