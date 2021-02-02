@@ -11,7 +11,7 @@ Design notes:
 
 DONE -- remove radio button on top right in favor of focus on design errors
 
---"predicted design errors" would bring you to screen 4
+DONE --"predicted design errors" would bring you to screen 4
   --shows list of design errors along with predicted risk broken up into high/medium/low risk
   --if you click on a specific design error it brings you to stock part page
 

@@ -19,13 +19,13 @@ const TableScreen4 = () => {
             <a onClick={e => sendToPartsScreen(e)} href="">Part {i}</a>
           </td>
           <td>
-            {Math.floor(Math.random() * 30) + 1}
+            {Math.floor(Math.random() * 10) + 1}
           </td>
           <td>
-            {Math.floor(Math.random() * 30) + 1}
+            {Math.floor(Math.random() * 10) + 1}
           </td>
           <td>
-            {Math.floor(Math.random() * 30) + 1}
+            {Math.floor(Math.random() * 10) + 1}
           </td>
         </tr>)
 
@@ -43,7 +43,7 @@ const TableScreen4 = () => {
           Risk Alerts
         </th>
         <th>
-          Blockers
+          Predicted Risk
         </th>
         <th>
           Process Deviations
