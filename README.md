@@ -1,7 +1,11 @@
 
 SCREEN 4
 
--- create it
+-- get rid of blockers column and name it predicted risk
+-- make it horizontal rectangle that is colored red, organe, yellow, or green
+-- default on page is that they're sorted with red on top then orange etc
+-- all numbers on page should range from 0-10
+-- red will have risk alerts 7-10, orange 5-6, yellow 2-4, green 0-1
 
 Design notes:
 
