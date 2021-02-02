@@ -1,6 +1,7 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom';
 import Table from 'react-bootstrap/Table';
+import PredictedRiskRectangle from './PredictedRiskRectangle';
 
 const TableScreen4 = () => {
   const history = useHistory();
@@ -25,7 +26,7 @@ const TableScreen4 = () => {
             {Math.floor(Math.random() * 10) + 1}
           </td>
           <td>
-            {Math.floor(Math.random() * 10) + 1}
+            <PredictedRiskRectangle risk={Math.floor(Math.random() * 10) + 1} />
           </td>
         </tr>)
 
@@ -43,10 +44,10 @@ const TableScreen4 = () => {
           Risk Alerts
         </th>
         <th>
-          Predicted Risk
+          Process Deviations
         </th>
         <th>
-          Process Deviations
+          Predicted Risk
         </th>
       </thead>
       <tbody>

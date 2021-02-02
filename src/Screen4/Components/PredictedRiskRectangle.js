@@ -1,0 +1,44 @@
+import React, { useState, useEffect, useRef } from 'react';
+import { Stage, Layer, Rect } from 'react-konva';
+
+const PredictedRiskRectangle = ({risk}) => {
+  const [width, setWidth] = useState(0);
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    setWidth(elementRef.current.attrs.container.offsetWidth);
+
+  }, [elementRef.current]);
+
+  const getColor = () => {
+    if (risk >= 7) {
+      return '#DF2935';
+    } else if (risk >= 5) {
+      return '#F58F29';
+    } else if (risk >= 2) {
+      return '#EFEA5A';
+    } else {
+      return '#0DAB76';
+    }
+  };
+
+
+  const rectWidth = width;
+  console.log(width)
+
+  return(
+    <Stage ref={elementRef} width={rectWidth} height={40}>
+      <Layer>
+        <Rect 
+          x={0}
+          y={10}
+          width={rectWidth/4}
+          height={20}
+          fill={getColor()}
+        />
+      </Layer>
+    </Stage>
+  );
+}
+
+export default PredictedRiskRectangle;
