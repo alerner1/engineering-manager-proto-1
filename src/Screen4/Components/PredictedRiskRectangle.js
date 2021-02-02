@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Stage, Layer, Rect } from 'react-konva';
 
-const PredictedRiskRectangle = ({risk}) => {
+const PredictedRiskRectangle = ({color}) => {
   const [width, setWidth] = useState(0);
   const elementRef = useRef(null);
 
@@ -11,11 +11,11 @@ const PredictedRiskRectangle = ({risk}) => {
   }, [elementRef.current]);
 
   const getColor = () => {
-    if (risk >= 7) {
+    if (color === 4) {
       return '#DF2935';
-    } else if (risk >= 5) {
+    } else if (color === 3) {
       return '#F58F29';
-    } else if (risk >= 2) {
+    } else if (color === 2) {
       return '#EFEA5A';
     } else {
       return '#0DAB76';

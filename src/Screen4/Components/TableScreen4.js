@@ -20,18 +20,40 @@ const TableScreen4 = () => {
             <a onClick={e => sendToPartsScreen(e)} href="">Part {i}</a>
           </td>
           <td>
-            {Math.floor(Math.random() * 10) + 1}
+            {rand10()}
           </td>
           <td>
-            {Math.floor(Math.random() * 10) + 1}
+            {rand10()}
           </td>
           <td>
-            <PredictedRiskRectangle risk={Math.floor(Math.random() * 10) + 1} />
+            <PredictedRiskRectangle color={rectColor(rand10())} />
           </td>
         </tr>)
 
     }
-    return rows.map(row => {return row});
+    
+    // sorts by color then by part number
+    // when you change the part numbers to actually have names, sort by full name alphabetical order instead
+    // or this whole sort might not even be necessary if you have the actual numbers in advance rather than randomly generating them in real time
+    rows.sort((a, b) => (a.props.children[3].props.children.props.color < b.props.children[3].props.children.props.color) ? 1 : (a.props.children[3].props.children.props.color === b.props.children[3].props.children.props.color) ? ((a.props.children[0].props.children.props.children[1] > b.props.children[0].props.children.props.children[1]) ? 1 : -1 ) : -1);
+    
+    return rows.map(row => {console.log(row.props.children[0].props.children.props.children[1]); return row});
+  }
+
+  const rand10 = () => {
+    return Math.floor(Math.random() * 10) + 1
+  }
+
+  const rectColor = (risk) => {
+    if (risk >= 7) {
+      return 4;
+    } else if (risk >= 5) {
+      return 3;
+    } else if (risk >= 2) {
+      return 2;
+    } else {
+      return 1;
+    }
   }
 
   return(
