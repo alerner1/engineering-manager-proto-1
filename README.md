@@ -10,6 +10,7 @@ DONE -- red will have risk alerts 7-10, orange 5-6, yellow 2-4, green 0-1
 Design notes:
 
 DONE -- remove radio button on top right in favor of focus on design errors
+-- (my input: implement titles so you know where you are)
 
 --"predicted design errors" would bring you to screen 4
   --shows list of design errors along with predicted risk broken up into high/medium/low risk
@@ -38,3 +39,29 @@ HEROKU
 [amplitude, jellyfish, engineering]
 
 --i'm still unclear on what the screen2 radio buttons do, will delete for now
+
+---
+
+TRENDS PAGE
+
+-- dropdowns: division, reason for change
+-- reasons options: design error, supplier cannot supply, change in interdependent part, requirements change
+-- clicking on one of these filters the specific reasons for change. 
+-- in which case, show a smaller bar? 
+
+-- legend: G: no error, Y: unavoidable revision, O: avoidable revision, R: design error
+
+-- bar chart.
+  -- x axis: year
+  -- y axis: percentage up to 100
+  -- each bar labeled at the top with number in the thousands
+  -- each bar consists of four colors: green, orange, yellow, red
+  -- % errors is increasing over time (-?- maybe this means green at bottom red at top. larger amount of red each year. easy to adjust, regardless)
+
+so what does the data look like for this?
+
+DIVISION --< CHANGE -- REASON
+                id
+
+and then we filter by division and reason. cool.
+when we say division... really subdivision? yeah let's do that. can always change later.
