@@ -2,8 +2,9 @@ import Screen1Container from './Screen1/Containers/Screen1Container';
 import Screen2Container from './Screen2/Containers/Screen2Container';
 import Screen3Container from './Screen3/Containers/Screen3Container';
 import Screen4Container from './Screen4/Containers/Screen4Container';
+import TrendsPageContainer from './TrendsPage/Containers/TrendsPageContainer'
 import React, { useState, useEffect } from 'react';
-import { Route, Switch, useHistory } from 'react-router-dom';
+import { Route, Switch, useHistory, Link } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faPlusCircle, faMinusCircle, faExclamationTriangle, faCircle, faBars, faAtom, faLayerGroup } from '@fortawesome/free-solid-svg-icons';
 import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
@@ -24,16 +25,19 @@ const App = () => {
     setShowSidebar(!showSidebar)
   }
 
-  const handleNav = (id) => {
-    switch(id) {
-      case "dashboard":
-        history.push('/');
-        break;
-      default:
-        history.push('/');
-        break;
-    }
-  }
+  // const handleNav = (event) => {
+  //   console.log(event.target)
+  //   switch(event.target.id) {
+  //     case "dashboard":
+  //       history.push('/');
+  //       break;
+  //     case "trends":
+  //       history.push('/trends')
+  //     default:
+  //       history.push('/');
+  //       break;
+  //   }
+  // }
 
   return (
       <div className="d-flex">
@@ -45,8 +49,14 @@ const App = () => {
             <ProSidebar collapsed={!showSidebar}>
               <Menu>
                 <SubMenu title="Analytics" icon={<FontAwesomeIcon style={{color: 'midnightblue'}} icon="atom" />}>
-                  <MenuItem onClick={(event) => handleNav(event.target.id)} id="dashboard" >Dashboards & KPIs</MenuItem>
-                  <MenuItem>Trends & performance <br /> tracking</MenuItem>
+                  <MenuItem>
+                    Dashboards & KPIs
+                    <Link to="/" />
+                  </MenuItem>
+                  <MenuItem>
+                    Trends & performance <br /> tracking
+                    <Link to="/trends" />
+                  </MenuItem>
                   <MenuItem>Drivers of errors & <br /> process recommendations</MenuItem>
                   <MenuItem>Predicted Risk</MenuItem>
                 </SubMenu>
@@ -69,6 +79,7 @@ const App = () => {
             <Route path="/subdivisions/:name" children={<Screen2Container />} />
             <Route path="/design_errors/:name" children={<Screen4Container />} />
             <Route path="/parts" children={<Screen3Container />} />
+            <Route path="/trends" children={<TrendsPageContainer />} />
             <Route path="/" render={() => <Screen1Container />} />
           </Switch>
         </div>
