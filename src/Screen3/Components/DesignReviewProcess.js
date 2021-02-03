@@ -17,11 +17,11 @@ const DesignReviewProcess = () => {
               Design and review process
             </Col>
             <Col className="font-xs" style={{color: 'midnightblue'}}>
-              <FontAwesomeIcon style={{color: '#DF2935'}} icon="circle" /> Approved
+              <FontAwesomeIcon style={{color: '#DF2935'}} icon="circle" /> Not approved
               <br />
               <FontAwesomeIcon style={{color: '#EFEA5A'}} icon="circle" /> Conditional Approval
               <br />
-              <FontAwesomeIcon style={{color: '#0DAB76'}} icon="circle" /> Not approved
+              <FontAwesomeIcon style={{color: '#0DAB76'}} icon="circle" /> Approved
             </Col>
           </Row>
         </Card.Title>
