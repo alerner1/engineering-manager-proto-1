@@ -1,5 +1,6 @@
 import React from 'react'
 import TrendsDropdownsContainer from './TrendsDropdownsContainer'
+import TrendsChartContainer from './TrendsChartContainer'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
@@ -11,6 +12,7 @@ const TrendsPageContainer = () => {
           <TrendsDropdownsContainer />
         </div>
         <div className="pt-2 px-3 d-block mx-auto w-100">
+          <TrendsChartContainer />
         </div>
       </Col>
     </Row>
