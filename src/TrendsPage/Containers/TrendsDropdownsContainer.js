@@ -14,15 +14,7 @@ const TrendsDropdownsContainer = () => {
       {mapDropdowns()}
       <Col xs={3}>
       </Col>
-      <Col className="font-xs" style={{color: 'midnightblue'}}>
-        <FontAwesomeIcon style={{color: '#DF2935'}} icon="circle" /> Design error
-        <br />
-        <FontAwesomeIcon style={{color: '#F58F29'}} icon="circle" /> Avoidable revision
-        <br />
-        <FontAwesomeIcon style={{color: '#EFEA5A'}} icon="circle" /> Unavoidable revision
-        <br />
-        <FontAwesomeIcon style={{color: '#0DAB76'}} icon="circle" /> No error
-      </Col>
+      
     </Row>
   );
 };
