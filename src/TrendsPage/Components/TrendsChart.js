@@ -65,6 +65,14 @@ const TrendsChart = ({ reasonFilter, divisionFilter }) => {
         height={200} width={400} domainPadding={{ x: 30, y: 20 }} padding={40}
         maxDomain={{ y: 100 }}
       >
+        <VictoryAxis
+          style={{ tickLabels: { fontSize: 10 }, grid: {stroke: 'grey', strokeWidth: 0.5, strokeDasharray: "4, 8"} }}
+        />
+        <VictoryAxis
+          dependentAxis
+          tickFormat={(tick) => `${tick}%`}
+          style={{ tickLabels: { fontSize: 10 }, grid: {stroke: 'grey', strokeWidth: 0.5, strokeDasharray: "4, 8"} }}
+        />
         <VictoryStack
           colorScale={['#0DAB76', '#EFEA5A', '#F58F29', '#DF2935']}
           style={{ labels: { fontSize: 10 } }}
@@ -83,20 +91,21 @@ const TrendsChart = ({ reasonFilter, divisionFilter }) => {
           >
           </VictoryBar>
         </VictoryStack>
-        <VictoryAxis
-          style={{ tickLabels: { fontSize: 10 } }}
-        />
-        <VictoryAxis
-          dependentAxis
-          tickFormat={(tick) => `${tick}%`}
-          style={{ tickLabels: { fontSize: 10 } }}
-        />
+        
       </VictoryChart>
       :
       <VictoryChart
         height={200} width={400} domainPadding={{ x: 30, y: 20 }} padding={40}
         maxDomain={{ y: 100 }}
       >
+        <VictoryAxis
+          style={{ tickLabels: { fontSize: 10 }, grid: {stroke: 'grey', strokeWidth: 0.5, strokeDasharray: "4, 8"} }}
+        />
+        <VictoryAxis
+          dependentAxis
+          tickFormat={(tick) => `${tick}%`}
+          style={{ tickLabels: { fontSize: 10 }, grid: {stroke: 'grey', strokeWidth: 0.5, strokeDasharray: "4, 8"} }}
+        />
         <VictoryStack
           colorScale={getReasonColor()}
           style={{ labels: { fontSize: 10 } }}
@@ -109,14 +118,7 @@ const TrendsChart = ({ reasonFilter, divisionFilter }) => {
           >
           </VictoryBar>
         </VictoryStack>
-        <VictoryAxis
-          style={{ tickLabels: { fontSize: 10 } }}
-        />
-        <VictoryAxis
-          dependentAxis
-          tickFormat={(tick) => `${tick}%`}
-          style={{ tickLabels: { fontSize: 10 } }}
-        />
+        
       </VictoryChart>
 
     // </div>
