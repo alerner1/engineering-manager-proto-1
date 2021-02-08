@@ -2,11 +2,11 @@ import React from 'react';
 import TrendsDropdowns from '../Components/TrendsDropdowns'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {v4 as uuidv4} from 'uuid'
 
-const TrendsDropdownsContainer = () => {
+const TrendsDropdownsContainer = ({ reasonFilter, divisionFilter, handleFilter }) => {
   const mapDropdowns = () => {
-    return dropdownsList.map((dropdown) => <Col><TrendsDropdowns info={dropdown}  /></Col>);
+    return dropdownsList.map((dropdown) => <Col><TrendsDropdowns reasonFilter={reasonFilter} divisionFilter={divisionFilter} handleFilter={handleFilter} info={dropdown} key={uuidv4()} /></Col>);
   };
 
   return(

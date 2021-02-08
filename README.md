@@ -22,7 +22,7 @@ DONE -- remove radio button on top right in favor of focus on design errors
 
 DONE --replace "upcoming critical tasks" and "predictions" with "predicted risk"
 
---functionality to show how % of design errors changes over time for each program
+DONE (except dropdowns) --functionality to show how % of design errors changes over time for each program
 (or division I suppose?) (fig a)
 
 --driver analysis shows top correlates of design errors. some have dots that we have set up as deep dives (fig b)
