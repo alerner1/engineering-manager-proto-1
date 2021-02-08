@@ -1,6 +1,5 @@
 import React from 'react'
 import { VictoryChart, VictoryStack, VictoryAxis, VictoryBar } from 'victory'
-import Card from 'react-bootstrap/Card'
 import { trendsData } from '../../trendsData'
 
 const TrendsChart = () => {
@@ -20,7 +19,6 @@ const TrendsChart = () => {
 
     for (const year in dataByYear) {
       data.push ({x: year, y: dataByYear[year]})
-      // data.push({x: year, y: dataByYear[year], label: totalByYear('(All)', year)})
     }
 
     return data
@@ -44,7 +42,7 @@ const TrendsChart = () => {
     // <div className="w-75 mx-auto">
 
       <VictoryChart 
-        height={200} width={400} domainPadding={{ x: 30, y: 20 }}
+        height={200} width={400} domainPadding={{ x: 30, y: 20 }} padding={40}
         maxDomain={{y: 100}}
         >
         <VictoryStack
@@ -66,11 +64,14 @@ const TrendsChart = () => {
             >
           </VictoryBar>
         </VictoryStack>
+        <VictoryAxis
+          style={{tickLabels: {fontSize: 10}}}
+        />
         <VictoryAxis 
           dependentAxis
           tickFormat={ (tick) => `${tick}%`}
+          style={{tickLabels: {fontSize: 10}}}
           />
-        <VictoryAxis />
       </VictoryChart>
     // </div>
   )

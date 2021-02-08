@@ -12,13 +12,16 @@ const TrendsChartContainer = () => {
         <Card.Title>
           Design Revisions Over Time
         </Card.Title>
-        <Row>
-          <TrendsLegend />
-        </Row>
+        <Card.Text className="mb-0 font-sm" style={{color: 'midnightblue'}}>
+          Yearly, last 5 years
+        </Card.Text>
         <Row>
           <Col>
             <TrendsChart />
           </Col>
+        </Row>
+        <Row>
+          <TrendsLegend />
         </Row>
       </Card.Body>
     </Card>
