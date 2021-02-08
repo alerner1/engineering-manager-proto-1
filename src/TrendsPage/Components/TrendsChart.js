@@ -1,6 +1,6 @@
-import { getDefaultNormalizer } from '@testing-library/react'
 import React from 'react'
 import { VictoryChart, VictoryStack, VictoryAxis, VictoryBar } from 'victory'
+import Card from 'react-bootstrap/Card'
 import { trendsData } from '../../trendsData'
 
 const TrendsChart = () => {
@@ -41,7 +41,8 @@ const TrendsChart = () => {
   }
 
   return(
-    <div className="w-75 mx-auto">
+    // <div className="w-75 mx-auto">
+
       <VictoryChart 
         height={200} width={400} domainPadding={{ x: 30, y: 20 }}
         maxDomain={{y: 100}}
@@ -62,7 +63,7 @@ const TrendsChart = () => {
             // should really be the totals for the whole thing, once we have better seed data. in that case use modified data.push for getData() 
             // but make it so you only see it once by having other label formats be invisible
             labels={({ datum }) => (`${Math.floor(Math.random() * 2000 + 3001)}`)}
-          >
+            >
           </VictoryBar>
         </VictoryStack>
         <VictoryAxis 
@@ -71,7 +72,7 @@ const TrendsChart = () => {
           />
         <VictoryAxis />
       </VictoryChart>
-    </div>
+    // </div>
   )
 }
 
