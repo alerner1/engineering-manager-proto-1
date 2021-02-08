@@ -114,7 +114,7 @@ const TrendsChart = ({ reasonFilter, divisionFilter }) => {
             // for now this total is a random number from 3000-5000
             // should really be the totals for the whole thing, once we have better seed data. in that case use modified data.push for getData() 
             // but make it so you only see it once by having other label formats be invisible
-            labels={({ datum }) => (`${Math.floor(Math.random() * 2000 + 3001)}`)}
+            labels={({ datum }) => (`${Math.floor(Math.random() * 500 + 501)}`)}
           >
           </VictoryBar>
         </VictoryStack>
