@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col'
 import TrendsChart from '../Components/TrendsChart'
 import TrendsLegend from '../Components/TrendsLegend'
 
-const TrendsChartContainer = () => {
+const TrendsChartContainer = ({ reasonFilter, divisionFilter }) => {
   return(
     <Card className="mx-auto" style={{width: '38rem'}}>
       <Card.Body>
@@ -17,7 +17,7 @@ const TrendsChartContainer = () => {
         </Card.Text>
         <Row>
           <Col>
-            <TrendsChart />
+            <TrendsChart reasonFilter={reasonFilter} divisionFilter={divisionFilter} />
           </Col>
         </Row>
         <Row>
