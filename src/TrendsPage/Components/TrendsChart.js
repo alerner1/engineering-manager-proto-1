@@ -66,12 +66,12 @@ const TrendsChart = ({ reasonFilter, divisionFilter }) => {
         maxDomain={{ y: 100 }}
       >
         <VictoryAxis
-          style={{ tickLabels: { fontSize: 10 }, grid: {stroke: 'grey', strokeWidth: 0.5, strokeDasharray: "4, 8"} }}
+          style={{ tickLabels: { fontSize: 10 }, grid: {stroke: 'grey', strokeWidth: 0.5, strokeDasharray: "2, 2"} }}
         />
         <VictoryAxis
           dependentAxis
           tickFormat={(tick) => `${tick}%`}
-          style={{ tickLabels: { fontSize: 10 }, grid: {stroke: 'grey', strokeWidth: 0.5, strokeDasharray: "4, 8"} }}
+          style={{ tickLabels: { fontSize: 10 }, grid: {stroke: 'grey', strokeWidth: 0.5, strokeDasharray: "2, 2"} }}
         />
         <VictoryStack
           colorScale={['#0DAB76', '#EFEA5A', '#F58F29', '#DF2935']}
@@ -99,12 +99,12 @@ const TrendsChart = ({ reasonFilter, divisionFilter }) => {
         maxDomain={{ y: 100 }}
       >
         <VictoryAxis
-          style={{ tickLabels: { fontSize: 10 }, grid: {stroke: 'grey', strokeWidth: 0.5, strokeDasharray: "4, 8"} }}
+          style={{ tickLabels: { fontSize: 10 }, grid: {stroke: 'grey', strokeWidth: 0.5, strokeDasharray: "2, 2"} }}
         />
         <VictoryAxis
           dependentAxis
           tickFormat={(tick) => `${tick}%`}
-          style={{ tickLabels: { fontSize: 10 }, grid: {stroke: 'grey', strokeWidth: 0.5, strokeDasharray: "4, 8"} }}
+          style={{ tickLabels: { fontSize: 10 }, grid: {stroke: 'grey', strokeWidth: 0.5, strokeDasharray: "2, 2"} }}
         />
         <VictoryStack
           colorScale={getReasonColor()}
