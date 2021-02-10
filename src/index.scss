@@ -1,7 +1,12 @@
+#root {
+  height: 100%;
+}
 
 body {
   background-color: white;
   color: deepskyblue !important;
+  height: 100vh;
+  margin: 0;
 }
 
 .form-control {
@@ -57,16 +62,14 @@ table {
   padding: .25rem .25rem !important;
 }
 
-$sidebar-collapsed-width: 0px;
-$sidebar-bg-color: whitesmoke;
-$sidebar-color: midnightblue;
-$highlight-color: deepskyblue;
-$submenu-bg-color: whitesmoke;
-$submenu-bg-color-collapsed: whitesmoke;
+$sidebar-collapsed-width: 40px;
+$sidebar-bg-color: #132A49;
+$sidebar-color: #FFFFFF;
+$highlight-color: #8DB2E2;
+$submenu-bg-color: #132A49;
+$submenu-color: #FFFFFF;
+$submenu-bg-color-collapsed: #132A49;
 
-.pro-sidebar {
-  position: sticky;
-  top: 0;
-}
+
 
 @import '~react-pro-sidebar/dist/scss/styles.scss';
