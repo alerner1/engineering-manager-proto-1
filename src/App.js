@@ -9,6 +9,8 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faPlusCircle, faMinusCircle, faExclamationTriangle, faCircle, faBars, faAtom, faLayerGroup } from '@fortawesome/free-solid-svg-icons';
 import { ProSidebar, Menu, MenuItem, SubMenu, SidebarHeader, SidebarContent } from 'react-pro-sidebar';
 import Button from 'react-bootstrap/Button'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 library.add(faPlusCircle, faMinusCircle, faExclamationTriangle, faCircle, faBars, faAtom, faLayerGroup)
@@ -24,10 +26,11 @@ const App = () => {
   return (
       <div className="d-flex" style={{height: '100%'}}>
         <ProSidebar collapsed={!showSidebar}>
-          <SidebarHeader>
-            <Button className="shadow-none button-transparent" onClick={() => toggleSidebar()}>
+          <SidebarHeader className="d-flex">
+            <Button className="shadow-none button-transparent mr-5" onClick={() => toggleSidebar()}>
               <FontAwesomeIcon icon="bars" /> 
             </Button>
+            <h3>AXION</h3>
           </SidebarHeader>
           <SidebarContent>
           <Menu>
