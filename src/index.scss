@@ -4,22 +4,22 @@
 
 body {
   background-color: white;
-  color: deepskyblue !important;
+  color: #132A49 !important;
   height: 100vh;
   margin: 0;
 }
 
 .form-control {
   background-color: whitesmoke !important;
-  color: midnightblue !important;
+  color: #132A49 !important;
 }
 
 table {
-  color: midnightblue !important;
+  color: #132A49 !important;
 }
 
 .list-group-item {
-  color: midnightblue !important;
+  color: #132A49 !important;
 }
 
 .button-transparent {
@@ -64,6 +64,14 @@ table {
 
 .no-border {
   border: none !important;
+}
+
+.no-top-border {
+  border-top: none !important;
+}
+
+.no-bottom-border {
+  border-bottom: none !important;
 }
 
 $sidebar-collapsed-width: 40px;

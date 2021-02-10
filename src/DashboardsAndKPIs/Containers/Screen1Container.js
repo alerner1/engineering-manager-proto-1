@@ -23,10 +23,10 @@ const Screen1Container = () => {
 
   return (
     <div className="d-flex flex-column">
-      <div className="pl-3 pt-2">
+      <div className="px-5 pt-5">
         <DropdownsContainer1 kpiFilter={kpiFilter} unitFilter={unitFilter} handleFilter={handleFilter} percentageMetric={percentageMetric} onPercentageMetricChange={onPercentageMetricChange} />
       </div>
-      <div className="px-3">
+      <div className="px-5">
         <TableContainer1 kpiFilter={kpiFilter} unitFilter={unitFilter} data={dataScreen1} percentageMetric={percentageMetric} />
       </div>
     </div>

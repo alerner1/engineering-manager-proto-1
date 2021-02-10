@@ -102,15 +102,15 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
 
       return <tr key={uuidv4()}>
 
-        {flag ? <td className="no-border division-cell font-small small-padding ">{row["Division"]}</td> : <td className="font-small" style={{ border: 'none' }}></td>}
+        {flag ? <td className={`${subdivisionDisplay ? 'no-bottom-border' : 'no-border'} division-cell font-small small-padding`}>{row["Division"]}</td> : <td className="no-border font-small"></td>}
 
-        <td onClick={event => redirectScreen2(event.target.innerText)} className={`no-border hover-hand font-small small-padding ${subdivisionDisplay ? "toggle-display in" : "toggle-display"}`}>
+        <td onClick={event => redirectScreen2(event.target.innerText)} className={`${flag ? 'no-bottom-border' : 'no-border'} hover-hand font-small small-padding ${subdivisionDisplay ? "toggle-display in" : "toggle-display"}`}>
           {row["Subdivision"]}
         </td>
-        <td className="no-border small-padding">
+        <td className={`${flag && subdivisionDisplay ? 'no-bottom-border' : 'no-border'} small-padding`}>
           {<PercentageMetricBar dataPoint={row[percentageMetric]} />}
         </td>
-        <td className="no-border small-padding ">
+        <td className={`${flag && subdivisionDisplay ? 'no-bottom-border' : 'no-border'} small-padding`}>
           {
             subdivisionDisplay ? 
             <a onClick={event => redirectScreen4(event, row["Subdivision"])} href="">{row["Predicted Design Errors"]}</a>
@@ -118,20 +118,20 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
             <a onClick={event => redirectScreen4(event, row["Division"])} href="">{row["Predicted Design Errors"]}</a>
           }
         </td>
-        <td className={`no-border small-padding ${kpiDisplay ? "toggle-display" : "toggle-display in"}`} style={{ border: 'none' }}></td>
-        <td className={`no-border small-padding  ${checkIfDisplayed('Iterations per design')}`}>
+        <td className={`${flag && subdivisionDisplay ? 'no-bottom-border' : 'no-border'} small-padding ${kpiDisplay ? "toggle-display" : "toggle-display in"}`}></td>
+        <td className={`${flag && subdivisionDisplay ? 'no-bottom-border' : 'no-border'} small-padding  ${checkIfDisplayed('Iterations per design')}`}>
           {row["Iterations per design"]}
         </td>
-        <td className={`no-border small-padding  ${checkIfDisplayed('% Rushed design')}`}>
+        <td className={`${flag && subdivisionDisplay ? 'no-bottom-border' : 'no-border'} small-padding  ${checkIfDisplayed('% Rushed design')}`}>
           {row["% Rushed design"]}
         </td>
-        <td className={`no-border small-padding  ${checkIfDisplayed('Design digitization')}`}>
+        <td className={`${flag && subdivisionDisplay ? 'no-bottom-border' : 'no-border'} small-padding  ${checkIfDisplayed('Design digitization')}`}>
           {row["Design digitization"]}
         </td>
-        <td className={`no-border small-padding  ${checkIfDisplayed('SME involvement')}`}>
+        <td className={`${flag && subdivisionDisplay ? 'no-bottom-border' : 'no-border'} small-padding  ${checkIfDisplayed('SME involvement')}`}>
           {row["SME involvement"]}
         </td>
-        <td className={kpiDisplay ? "no-border toggle-display in" : "toggle-display"} ></td>
+        <td className={kpiDisplay ? `${flag && subdivisionDisplay ? 'no-bottom-border' : 'no-border'} toggle-display in` : "toggle-display"} ></td>
       </tr>
     })
   }
@@ -157,37 +157,37 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
       {/* this is also a mess, try to fix */}
       <thead>
         <tr>
-          <th style={{ width: '12%' }} className="small-padding">
+          <th style={{ width: '12%'}} className="no-top-border small-padding">
             <div className="hover-hand font-small" onClick={() => toggleSubdivisions()}>
               Division &nbsp;
               {subdivisionDisplay ? <FontAwesomeIcon className="hover-hand" icon="minus-circle" /> : <FontAwesomeIcon className="hover-hand" icon="plus-circle" />}
             </div>
           </th>
-          <th style={{ width: '20%' }} className={`font-small small-padding ${subdivisionDisplay ? "toggle-display in" : "toggle-display"}`}>
+          <th style={{ width: '20%' }} className={`no-top-border font-small small-padding ${subdivisionDisplay ? "toggle-display in" : "toggle-display"}`}>
             Subdivision
           </th>
-          <th className="font-small small-padding">
+          <th className="no-top-border font-small small-padding">
             {percentageMetric}
           </th>
-          <th className="font-small small-padding" style={{ width: "7%" }}>
+          <th className="no-top-border font-small small-padding" style={{ width: "7%" }}>
             Predicted Errors
           </th>
-          <th style={{ width: "20%" }} onClick={toggleKPIs} className={`font-small small-padding ${kpiDisplay ? "toggle-display" : "toggle-display in"}`}>
+          <th style={{ width: "20%" }} onClick={toggleKPIs} className={`no-top-border font-small small-padding ${kpiDisplay ? "toggle-display" : "toggle-display in"}`}>
             Design Performance KPIs &nbsp; <FontAwesomeIcon className="hover-hand" icon="plus-circle" />
           </th>
-          <th style={{width: '7%'}} className={`font-small small-padding ${checkIfDisplayed('Iterations per design')}`}>
+          <th style={{width: '7%'}} className={`no-top-border font-small small-padding ${checkIfDisplayed('Iterations per design')}`}>
             Iterations per design
           </th>
-          <th style={{width: '7%'}} className={`font-small small-padding ${checkIfDisplayed('% Rushed design')}`}>
+          <th style={{width: '7%'}} className={`no-top-border font-small small-padding ${checkIfDisplayed('% Rushed design')}`}>
             Rushed design
           </th>
-          <th style={{width: '7%'}} className={`font-small small-padding ${checkIfDisplayed('Design digitization')}`}>
+          <th style={{width: '7%'}} className={`no-top-border font-small small-padding ${checkIfDisplayed('Design digitization')}`}>
             Design digitization
           </th>
-          <th style={{width: '7%'}} className={`font-small small-padding ${checkIfDisplayed('SME involvement')}`}>
+          <th style={{width: '7%'}} className={`no-top-border font-small small-padding ${checkIfDisplayed('SME involvement')}`}>
             SME involvement 
           </th>
-          <th style={{width: '2%'}} className={`font-small small-padding ${kpiDisplay ? "toggle-display in" : "toggle-display"}`}><FontAwesomeIcon className="hover-hand" onClick={() => toggleKPIs()} icon="minus-circle" /></th>
+          <th style={{width: '2%'}} className={`no-top-border font-small small-padding ${kpiDisplay ? "toggle-display in" : "toggle-display"}`}><FontAwesomeIcon className="hover-hand" onClick={() => toggleKPIs()} icon="minus-circle" /></th>
         </tr>
       </thead>
       <tbody>
