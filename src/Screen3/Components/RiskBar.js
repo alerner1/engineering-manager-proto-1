@@ -11,7 +11,7 @@ const RiskBar = ({dataPoint}) => {
     }
 
   return(
-    <VictoryChart maxDomain={{ y: 100 }} horizontal height={10} width={100} padding={{ top: 5, bottom: 5 }}>
+    <VictoryChart maxDomain={{ y: 100 }} horizontal height={6} width={100} padding={{ top: 4, bottom: 4 }}>
       <VictoryStack
         style={{ labels: { fill: "midnightblue", fontSize: 4 } }}
       >

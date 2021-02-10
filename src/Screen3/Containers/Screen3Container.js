@@ -13,26 +13,14 @@ const Screen3Container = () => {
   return(
     <Container className="my-2">
       <Row className="pb-1">
-        <Col>
+        <Col className="d-flex flex-column justify-content-between">
           <PartInfo />
-        </Col>
-        <Col>
-          <DesignReviewProcess />
-        </Col>
-      </Row>
-      <Row className="pb-1">
-        <Col>
           <RiskAlerts />
-        </Col>
-        <Col>
-          <PredictedRisk />
-        </Col>
-      </Row>
-      <Row>
-        <Col>
           <WorkflowsExecuted />
         </Col>
-        <Col>
+        <Col className="d-flex flex-column justify-content-between">
+          <DesignReviewProcess />
+          <PredictedRisk />
           <SuggestedActions />
         </Col>
       </Row>

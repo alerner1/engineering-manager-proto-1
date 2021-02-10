@@ -4,8 +4,8 @@ import RiskBar from './RiskBar';
 
 const PredictedRisk = () => {
   return(
-    <Card className="h-100">
-      <Card.Body className="p-2">
+    <Card className="mb-1">
+      <Card.Body className="px-2 pt-2 pb-0">
         <Card.Title>
           Predicted Risk
         </Card.Title>

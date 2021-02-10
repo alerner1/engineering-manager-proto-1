@@ -4,8 +4,8 @@ import Image from 'react-bootstrap/Image';
 
 const SuggestedActions = () => {
   return(
-    <Card className="h-100">
-      <Card.Body className="p-2">
+    <Card>
+      <Card.Body className="px-2 pt-2 pb-0">
         <Card.Title>
           Suggested Actions
         </Card.Title>
