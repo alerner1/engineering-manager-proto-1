@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const RiskAlerts = () => {
   return(
-    <Card className="mb-1">
+    <Card className="mb-2 border-blue">
       <Card.Body className="p-2">
-        <Card.Title>
+        <Card.Title className="text-blue">
           Risk Alerts
         </Card.Title>
         <Card.Text>

@@ -4,9 +4,9 @@ import Image from 'react-bootstrap/Image';
 
 const WorkflowsExecuted = () => {
   return(
-    <Card>
+    <Card className="border-blue">
       <Card.Body className="px-2 pt-2 pb-0">
-        <Card.Title>
+        <Card.Title className="text-blue">
           Workflows Executed
         </Card.Title>
         <Card.Text>

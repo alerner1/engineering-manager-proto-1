@@ -1,6 +1,4 @@
 import Card from 'react-bootstrap/Card';
-import Table from 'react-bootstrap/Table';
-import ProgressBar from 'react-bootstrap/ProgressBar';
 import ListGroup from 'react-bootstrap/ListGroup';
 import DesignReviewChart from './DesignReviewChart';
 import Row from 'react-bootstrap/Row';
@@ -9,33 +7,33 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const DesignReviewProcess = () => {
   return(
-    <Card className="mb-1">
+    <Card className="mb-2 border-blue">
       <Card.Body className="p-2">
-        <Card.Title>
-          <Row noGutters>
+        <Card.Title className="text-blue">
+          <Row>
             <Col xs={8}>
               Design and review process
             </Col>
-            <Col className="font-xs" style={{color: 'midnightblue'}}>
-              <FontAwesomeIcon style={{color: '#DF2935'}} icon="circle" /> Not approved
-              <br />
-              <FontAwesomeIcon style={{color: '#EFEA5A'}} icon="circle" /> Conditional Approval
-              <br />
-              <FontAwesomeIcon style={{color: '#0DAB76'}} icon="circle" /> Approved
-            </Col>
+          </Row>  
+          <Row className="font-xs mt-1" style={{color: 'black'}}>
+                <Col>
+                  <FontAwesomeIcon style={{color: '#0DAB76'}} icon="circle" /> Approved
+                  &nbsp;
+                  <FontAwesomeIcon style={{color: '#EFEA5A'}} icon="circle" /> Conditional Approval
+                  &nbsp;
+                  <FontAwesomeIcon style={{color: '#DF2935'}} icon="circle" /> Not approved
+                </Col>
           </Row>
         </Card.Title>
         <Card.Text>
           <DesignReviewChart />
-          <Card.Title>
-              Review comment excerpts
-          </Card.Title>
-          <Card.Text>
+          <Card.Text className="mt-2">
+            <h6>Review comment excerpts</h6>
             <ListGroup variant="flush">
-              <ListGroup.Item className="font-italic font-small small-padding">
+              <ListGroup.Item className="ml-2 no-border font-xs small-padding">
                 "I'm not sure this part will fit into the thermal requirements"
               </ListGroup.Item>
-              <ListGroup.Item className="font-italic font-small small-padding">
+              <ListGroup.Item className="ml-2 no-border font-xs small-padding">
                 "We should set a meeting with the Subject Matter Experts but I'm not sure there's enough time before the deadline"
               </ListGroup.Item>
             </ListGroup>

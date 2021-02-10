@@ -4,9 +4,9 @@ import RiskBar from './RiskBar';
 
 const PredictedRisk = () => {
   return(
-    <Card className="mb-1">
+    <Card className="mb-2 border-blue">
       <Card.Body className="px-2 pt-2 pb-0">
-        <Card.Title>
+        <Card.Title className="text-blue">
           Predicted Risk
         </Card.Title>
         <Card.Text>

@@ -6,9 +6,9 @@ import partcadimg from '../../partcadimg.png';
 
 const PartInfo = () => {
   return(
-    <Card className="mb-1">
+    <Card className="mb-2 border-blue">
     <Card.Body className="p-2">
-      <Card.Title>
+      <Card.Title className="text-blue">
         Part #212
       </Card.Title>
       <Card.Text>
