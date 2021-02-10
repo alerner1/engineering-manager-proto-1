@@ -102,29 +102,15 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
 
       return <tr key={uuidv4()}>
 
-        {flag ? <td className="division-cell font-small small-padding ">{row["Division"]}</td> : <td className="font-small" style={{ border: 'none' }}></td>}
+        {flag ? <td className="no-border division-cell font-small small-padding ">{row["Division"]}</td> : <td className="font-small" style={{ border: 'none' }}></td>}
 
-        <td onClick={event => redirectScreen2(event.target.innerText)} className={`hover-hand font-small small-padding ${subdivisionDisplay ? "toggle-display in" : "toggle-display"}`}>
+        <td onClick={event => redirectScreen2(event.target.innerText)} className={`no-border hover-hand font-small small-padding ${subdivisionDisplay ? "toggle-display in" : "toggle-display"}`}>
           {row["Subdivision"]}
         </td>
-        <td className="small-padding">
+        <td className="no-border small-padding">
           {<PercentageMetricBar dataPoint={row[percentageMetric]} />}
         </td>
-        <td className={`small-padding ${kpiDisplay ? "toggle-display" : "toggle-display in"}`} style={{ border: 'none' }}></td>
-        <td className={`small-padding text-center ${checkIfDisplayed('Iterations per design')}`}>
-          {row["Iterations per design"]}
-        </td>
-        <td className={`small-padding text-center ${checkIfDisplayed('% Rushed design')}`}>
-          {row["% Rushed design"]}
-        </td>
-        <td className={`small-padding text-center ${checkIfDisplayed('Design digitization')}`}>
-          {row["Design digitization"]}
-        </td>
-        <td className={`small-padding text-center ${checkIfDisplayed('SME involvement')}`}>
-          {row["SME involvement"]}
-        </td>
-        <td className={kpiDisplay ? "toggle-display in" : "toggle-display"} ></td>
-        <td className="small-padding text-center">
+        <td className="no-border small-padding ">
           {
             subdivisionDisplay ? 
             <a onClick={event => redirectScreen4(event, row["Subdivision"])} href="">{row["Predicted Design Errors"]}</a>
@@ -132,6 +118,20 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
             <a onClick={event => redirectScreen4(event, row["Division"])} href="">{row["Predicted Design Errors"]}</a>
           }
         </td>
+        <td className={`no-border small-padding ${kpiDisplay ? "toggle-display" : "toggle-display in"}`} style={{ border: 'none' }}></td>
+        <td className={`no-border small-padding  ${checkIfDisplayed('Iterations per design')}`}>
+          {row["Iterations per design"]}
+        </td>
+        <td className={`no-border small-padding  ${checkIfDisplayed('% Rushed design')}`}>
+          {row["% Rushed design"]}
+        </td>
+        <td className={`no-border small-padding  ${checkIfDisplayed('Design digitization')}`}>
+          {row["Design digitization"]}
+        </td>
+        <td className={`no-border small-padding  ${checkIfDisplayed('SME involvement')}`}>
+          {row["SME involvement"]}
+        </td>
+        <td className={kpiDisplay ? "no-border toggle-display in" : "toggle-display"} ></td>
       </tr>
     })
   }
@@ -169,8 +169,11 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
           <th className="font-small small-padding">
             {percentageMetric}
           </th>
-          <th style={{ width: "15%" }} className={`font-small small-padding ${kpiDisplay ? "toggle-display" : "toggle-display in"}`}>
-            <Button style={{color: "midnightblue", backgroundColor: "transparent", border: "2px solid lightgray"}} className={`p-1 font-small ${kpiDisplay ? "toggle-display" : "toggle-display in"}`} onClick={toggleKPIs}>Display design performance KPIs <FontAwesomeIcon icon="plus-circle" /></Button>
+          <th className="font-small small-padding" style={{ width: "7%" }}>
+            Predicted Errors
+          </th>
+          <th style={{ width: "20%" }} onClick={toggleKPIs} className={`font-small small-padding ${kpiDisplay ? "toggle-display" : "toggle-display in"}`}>
+            Design Performance KPIs &nbsp; <FontAwesomeIcon className="hover-hand" icon="plus-circle" />
           </th>
           <th style={{width: '7%'}} className={`font-small small-padding ${checkIfDisplayed('Iterations per design')}`}>
             Iterations per design
@@ -185,9 +188,6 @@ const TableScreen1 = ({ kpiFilter, unitFilter, data, percentageMetric }) => {
             SME involvement 
           </th>
           <th style={{width: '2%'}} className={`font-small small-padding ${kpiDisplay ? "toggle-display in" : "toggle-display"}`}><FontAwesomeIcon className="hover-hand" onClick={() => toggleKPIs()} icon="minus-circle" /></th>
-          <th className="font-small small-padding" style={{ width: "7%" }}>
-            Predicted Design Errors
-          </th>
         </tr>
       </thead>
       <tbody>

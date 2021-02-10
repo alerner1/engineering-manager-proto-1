@@ -1,4 +1,4 @@
-import Screen1Container from './Screen1/Containers/Screen1Container';
+import Screen1Container from './DashboardsAndKPIs/Containers/Screen1Container';
 import Screen2Container from './Screen2/Containers/Screen2Container';
 import Screen3Container from './Screen3/Containers/Screen3Container';
 import Screen4Container from './Screen4/Containers/Screen4Container';
